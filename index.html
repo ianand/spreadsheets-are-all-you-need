@@ -3,11 +3,82 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spreadsheets are all you need</title>
+    <title>Spreadsheets are all you need: Understanding GPT2 and Transformers with spreadsheets</title>
+    <meta
+      name="description"
+      content="A spreadsheet implementation of GPT2 for understanding AI, Machine Learnings, Transformers, and Large Language Models"
+    />
+
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   </head>
+
   <body>
-    <h1>Hello World</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer libero orci, ultrices pulvinar tempor ut, dapibus facilisis massa. Donec tempor ornare odio eu blandit. Donec suscipit ligula sit amet quam sodales, nec ultrices quam feugiat. Duis et iaculis massa. Sed sed turpis eget sapien bibendum tincidunt. Aenean in ipsum varius, fermentum arcu non, scelerisque sapien. Proin efficitur orci sit amet rutrum aliquam. Suspendisse imperdiet arcu quis est varius, a porttitor nisl commodo. In hac habitasse platea dictumst. Vivamus pulvinar ultrices tincidunt. In varius nisl ac ultrices porta. Vestibulum neque justo, lobortis vel lectus sed, finibus ullamcorper turpis. Nam scelerisque eget eros tincidunt consequat. Donec sollicitudin semper elit eget finibus. Nulla orci massa, posuere vitae molestie eleifend, volutpat ac enim. Ut tempus, magna vitae consequat mattis, dolor sem dictum risus, non malesuada sem risus a neque.</p>
-  </body>
-  </html>
-    
+    <!-- Header -->
+    <header class="container">
+      <hgroup>
+        <h1>Spreadsheets-are-all-you-need</h1>
+        <h2>Understanding AI, GPT2, and Transformers with spreadsheets</h2>
+      </hgroup>
+    </header>
+    <!-- ./ Header -->
+
+    <!-- Main -->
+    <main class="container">
+        <h2>What?</h2>
+        <p>
+Spreadsheets-are-all-you-need implements the forward pass of <a href="https://en.wikipedia.org/wiki/GPT-2">GPT2</a> (an ancestor of ChatGPT) entirely in Excel using standard spreadsheet functions. </p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yjD2n_e9E3w?si=2QzR3CjAibSqogW-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+<h2>Why?</h2>
+<p>By using a spreadsheet anyone (even non-developers) can explore and play directly with how a “real” transformer works under the hood with minimal abstractions to get in the way.
+</p>
+
+
+<h2>Implementation</h2>
+<p>The implementation is just enough to run very small workloads:</p>
+
+<ul>
+<li>Full GPT2 small (124M parameters) model including byte pair encoding, embeddings, multi-headed attention, and multi-layer perceptron stages</li>
+<li>Inference/forward pass only (no training)</li>
+<li>Context is limited to 10 tokens in length</li>
+<li>10 characters per word limit</li>
+<li>Zero temperature output only</li>
+</ul>
+
+<p><b>This sheet is very big.</b> Unfortunately, it is not unusual for Excel to lock up while using this spreadsheet. It is highly recommended to use the manual calculation mode in Excel.</p>
+
+<h2>Try it yourself</h2>
+
+<p>The sheet is available as an xlsb (Excel binary) file in the <a href="https://github.com/ianand/spreadsheets-are-all-you-need/releases/tag/v0.5.0">Releases section</a> of the github repo. You should be able to download and run this file in Excel for Mac or PC.</p>
+
+<h2>Issues</h2>
+<p>Bugs are not out of the question. Please file issues on <a href="https://github.com/ianand/spreadsheets-are-all-you-need">Github</a></p>
+
+<h2>Contact</h2>
+<p><a href="https://twitter.com/ianand">@ianand</a> on Twitter</p>
+
+<p><a href="https://https://github.com/ianand/spreadsheets-are-all-you-need">ianand/spreadsheets-are-all-you-need</a> on Github</p>
+
+<h2>FAQ</h2>
+<h3>What about Google Sheets?</h3>
+<p>This project actually started on Google Sheets but the full 124M model was too big and switched to Excel. I'm still exploring ways to make this work in Google Sheets but it unlikely to fit into a single file as can with Excel.</p>
+<h3>Why can't I chat with it like ChatGPT? It doesn't match the output of ChatGPT?</h3>
+<p>Aside from the minuscule context lenght, it also lacks the instruction tuning and reinforcement learning from human feedback (RLHF) that turn a large language model into a chatbot.</p>
+<h3>Why is it called Spreadsheets-are-all-you-need</h3>
+<p>It is a play on the title of the famous <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> paper which first decribed the <a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)">Transformer machine learning model</a> that underlies ChatGPT, Claude, Bard, and many of the latest generation of Generative AI tools.</p>
+
+
+<h4>Misc</h4>
+<small>Site layout: <a href="https://picocss.com">PicoCSS</a>
+</small>
+
+<!-- Fathom - beautiful, simple website analytics -->
+                <script src="https://cdn.usefathom.com/script.js" data-site="YFMHMTBX" defer></script>
+              <!-- / Fathom -->
+
+</main>
+</body>
+</html>

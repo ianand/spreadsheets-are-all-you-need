@@ -29,26 +29,65 @@
         <p>
 Spreadsheets-are-all-you-need implements the forward pass of <a href="https://en.wikipedia.org/wiki/GPT-2">GPT2</a> (an ancestor of ChatGPT) entirely in Excel using standard spreadsheet functions. </p>
 
+        <h2>Show me!</h2>
+        <p>Certainly, here's a 10 minute video about the project from the Seattle AI Tinkerers meetup:</p>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AIACopCeGlQ?si=P_QEcVDwa3awQRFh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<br />
+<h2>Why?</h2>
+<p>By using a spreadsheet anyone (even non-developers) can explore and play directly with how a “real” transformer works under the hood with minimal abstractions to get in the way.
+</p>
 
-<br />
+<h2>Tutorials</h2>
 
+<h3> Lesson 1: Demystifying GPT with Excel</h3>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FyeN5tXMnJ8?si=Hul9XLYzlZjRsz1j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <br />
 
 <br />
 
+<h3> Lesson 2: Byte Pair Encoding & Tokenization</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PvZN3-WqAOI?si=M0Zf069_-Ku3C9uW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br />
+
+<br />
+
+<h3> Extra: A walk through of the Excel sheet </h3>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yjD2n_e9E3w?si=2QzR3CjAibSqogW-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-<h2>Why?</h2>
-<p>By using a spreadsheet anyone (even non-developers) can explore and play directly with how a “real” transformer works under the hood with minimal abstractions to get in the way.
-</p>
+<br />
 
+<br />
+
+<h3>More lessons to come! Get notified!</h3>
+          <p>Future videos will walk through more details on the internals of modern AI. Subscribe below to get notified about new tutorials and updates.</p>
+          
+<div id="mc_embed_signup">
+    <form action="https://spreadsheets-are-all-you-need.us21.list-manage.com/subscribe/post?u=96d33fd949860389358a81747&amp;id=c84c7806a0&amp;f_id=007de5e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div id="mc_embed_signup_scroll">
+            <div class="mc-field-group"><label for="mce-EMAIL">Email Address</label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
+        <div id="mce-responses" class="clear foot">
+            <div class="response" id="mce-error-response" style="display: none;"></div>
+            <div class="response" id="mce-success-response" style="display: none;"></div>
+        </div>
+    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+        <input type="text" name="b_96d33fd949860389358a81747_c84c7806a0" tabindex="-1" value="">
+    </div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                <p style="margin: 0px auto;"><a href="http://eepurl.com/iCqbgI" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
 
 <h2>Implementation</h2>
 <p>The implementation is just enough to run very small workloads:</p>
@@ -74,30 +113,7 @@ Spreadsheets-are-all-you-need implements the forward pass of <a href="https://en
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
-<h2>Get notified</h2>
-          <p>Future videos will walk through more details on the internals of modern AI. Subscribe below to get notified about new tutorials and updates.</p>
-          
-<div id="mc_embed_signup">
-    <form action="https://spreadsheets-are-all-you-need.us21.list-manage.com/subscribe/post?u=96d33fd949860389358a81747&amp;id=c84c7806a0&amp;f_id=007de5e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-        <div id="mc_embed_signup_scroll">
-            <div class="mc-field-group"><label for="mce-EMAIL">Email Address</label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
-        <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
-        </div>
-    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-        <input type="text" name="b_96d33fd949860389358a81747_c84c7806a0" tabindex="-1" value="">
-    </div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                <p style="margin: 0px auto;"><a href="http://eepurl.com/iCqbgI" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
-            </div>
-        </div>
-    </div>
-</form>
-</div>
+
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
 
 

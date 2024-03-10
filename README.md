@@ -8,4 +8,4 @@ Visit [spreadsheets-are-all-you-need.ai](https://spreadsheets-are-all-you-need.a
 
 # Download the sheet
 
-The sheet is available as an xlsb (Excel binary) file in the [Releases section](https://github.com/ianand/spreadsheets-are-all-you-need/releases/tag/v0.5.0) of this repo. You should be able to download and run this file in Excel for Mac or PC.
+The sheet is available as an xlsb (Excel binary) file in the [Releases section](https://github.com/ianand/spreadsheets-are-all-you-need/releases/tag/v0.6.0) of this repo. You should be able to download and run this file in Excel for Mac or PC.

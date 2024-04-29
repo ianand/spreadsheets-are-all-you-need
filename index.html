@@ -72,11 +72,18 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 <style id='wp-block-buttons-inline-css'>
 .wp-block-buttons.is-vertical{flex-direction:column}.wp-block-buttons.is-vertical>.wp-block-button:last-child{margin-bottom:0}.wp-block-buttons>.wp-block-button{display:inline-block;margin:0}.wp-block-buttons.is-content-justification-left{justify-content:flex-start}.wp-block-buttons.is-content-justification-left.is-vertical{align-items:flex-start}.wp-block-buttons.is-content-justification-center{justify-content:center}.wp-block-buttons.is-content-justification-center.is-vertical{align-items:center}.wp-block-buttons.is-content-justification-right{justify-content:flex-end}.wp-block-buttons.is-content-justification-right.is-vertical{align-items:flex-end}.wp-block-buttons.is-content-justification-space-between{justify-content:space-between}.wp-block-buttons.aligncenter{text-align:center}.wp-block-buttons:not(.is-content-justification-space-between,.is-content-justification-right,.is-content-justification-left,.is-content-justification-center) .wp-block-button.aligncenter{margin-left:auto;margin-right:auto;width:100%}.wp-block-buttons[style*=text-decoration] .wp-block-button,.wp-block-buttons[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-button.aligncenter{text-align:center}
 </style>
-<style id='wp-block-embed-inline-css'>
-.wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed figcaption{margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
-</style>
+<link rel='stylesheet' id='wp-block-image-css' href='wp-includes/blocks/image/style.min.css%3Fver=6.5.2.css' media='all' />
 <style id='wp-block-separator-inline-css'>
 @charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}.wp-block-separator.is-style-dots{background:none!important;border:none;height:auto;line-height:1;text-align:center}.wp-block-separator.is-style-dots:before{color:currentColor;content:"···";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}
+</style>
+<style id='wp-block-quote-inline-css'>
+.wp-block-quote{box-sizing:border-box;overflow-wrap:break-word}.wp-block-quote.is-large:where(:not(.is-style-plain)),.wp-block-quote.is-style-large:where(:not(.is-style-plain)){margin-bottom:1em;padding:0 1em}.wp-block-quote.is-large:where(:not(.is-style-plain)) p,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) p{font-size:1.5em;font-style:italic;line-height:1.6}.wp-block-quote.is-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-large:where(:not(.is-style-plain)) footer,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) footer{font-size:1.125em;text-align:right}.wp-block-quote>cite{display:block}
+</style>
+<style id='wp-block-columns-inline-css'>
+.wp-block-columns{align-items:normal!important;box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+</style>
+<style id='wp-block-embed-inline-css'>
+.wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed figcaption{margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
 </style>
 <style id='wp-block-list-inline-css'>
 ol,ul{box-sizing:border-box}ol.has-background,ul.has-background{padding:1.25em 2.375em}
@@ -88,13 +95,6 @@ ol,ul{box-sizing:border-box}ol.has-background,ul.has-background{padding:1.25em 2
 				ul.is-style-checkmark-list li {
 					padding-inline-start: 1ch;
 				}
-</style>
-<link rel='stylesheet' id='wp-block-image-css' href='wp-includes/blocks/image/style.min.css%3Fver=6.5.css' media='all' />
-<style id='wp-block-columns-inline-css'>
-.wp-block-columns{align-items:normal!important;box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
-</style>
-<style id='wp-block-quote-inline-css'>
-.wp-block-quote{box-sizing:border-box;overflow-wrap:break-word}.wp-block-quote.is-large:where(:not(.is-style-plain)),.wp-block-quote.is-style-large:where(:not(.is-style-plain)){margin-bottom:1em;padding:0 1em}.wp-block-quote.is-large:where(:not(.is-style-plain)) p,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) p{font-size:1.5em;font-style:italic;line-height:1.6}.wp-block-quote.is-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-large:where(:not(.is-style-plain)) footer,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) footer{font-size:1.125em;text-align:right}.wp-block-quote>cite{display:block}
 </style>
 <style id='wp-emoji-styles-inline-css'>
 
@@ -129,7 +129,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 .wp-block-calendar.wp-block-calendar table:where(:not(.has-text-color)) th{background-color:var(--wp--preset--color--contrast-2);color:var(--wp--preset--color--base);border-color:var(--wp--preset--color--contrast-2)}.wp-block-calendar table:where(:not(.has-text-color)) td{border-color:var(--wp--preset--color--contrast-2)}.wp-block-categories{}.wp-block-categories{list-style-type:none;}.wp-block-categories li{margin-bottom: 0.5rem;}.wp-block-post-comments-form{}.wp-block-post-comments-form textarea, .wp-block-post-comments-form input{border-radius:.33rem}.wp-block-loginout{}.wp-block-loginout input{border-radius:.33rem;padding:calc(0.667em + 2px);border:1px solid #949494;}.wp-block-post-terms{}.wp-block-post-terms .wp-block-post-terms__prefix{color: var(--wp--preset--color--contrast-2);}.wp-block-query-title{}.wp-block-query-title span{font-style: italic;}.wp-block-quote{}.wp-block-quote :where(p){margin-block-start:0;margin-block-end:calc(var(--wp--preset--spacing--10) + 0.5rem);}.wp-block-quote :where(:last-child){margin-block-end:0;}.wp-block-quote.has-text-align-right.is-style-plain, .rtl .is-style-plain.wp-block-quote:not(.has-text-align-center):not(.has-text-align-left){border-width: 0 2px 0 0;padding-left:calc(var(--wp--preset--spacing--20) + 0.5rem);padding-right:calc(var(--wp--preset--spacing--20) + 0.5rem);}.wp-block-quote.has-text-align-left.is-style-plain, body:not(.rtl) .is-style-plain.wp-block-quote:not(.has-text-align-center):not(.has-text-align-right){border-width: 0 0 0 2px;padding-left:calc(var(--wp--preset--spacing--20) + 0.5rem);padding-right:calc(var(--wp--preset--spacing--20) + 0.5rem)}.wp-block-search{}.wp-block-search .wp-block-search__input{border-radius:.33rem}.wp-block-separator{}.wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.alignwide):not(.alignfull){width: var(--wp--preset--spacing--60)}
 </style>
 <style id='core-block-supports-inline-css'>
-.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1 > * + *{margin-block-start:0px;margin-block-end:0;}.wp-container-core-group-is-layout-2.wp-container-core-group-is-layout-2{gap:var(--wp--preset--spacing--20);}.wp-container-core-group-is-layout-3.wp-container-core-group-is-layout-3{justify-content:space-between;}.wp-container-core-buttons-is-layout-1.wp-container-core-buttons-is-layout-1{justify-content:center;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:565px;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > .alignwide{max-width:565px;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 .alignfull{max-width:none;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > * + *{margin-block-start:0px;margin-block-end:0;}.wp-container-core-columns-is-layout-1.wp-container-core-columns-is-layout-1{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-2.wp-container-core-columns-is-layout-2{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-group-is-layout-9.wp-container-core-group-is-layout-9 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-9.wp-container-core-group-is-layout-9.wp-container-core-group-is-layout-9.wp-container-core-group-is-layout-9 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-columns-is-layout-3.wp-container-core-columns-is-layout-3{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-4.wp-container-core-columns-is-layout-4{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-5.wp-container-core-columns-is-layout-5{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-6.wp-container-core-columns-is-layout-6{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-group-is-layout-13.wp-container-core-group-is-layout-13 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-13.wp-container-core-group-is-layout-13.wp-container-core-group-is-layout-13.wp-container-core-group-is-layout-13 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-content-1{flex-basis:1.25rem;}.wp-container-core-group-is-layout-16.wp-container-core-group-is-layout-16{gap:0px;flex-direction:column;align-items:center;}.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-7.wp-container-core-columns-is-layout-7{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-8.wp-container-core-columns-is-layout-8{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-9.wp-container-core-columns-is-layout-9{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-10.wp-container-core-columns-is-layout-10{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-group-is-layout-22.wp-container-core-group-is-layout-22 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-22.wp-container-core-group-is-layout-22.wp-container-core-group-is-layout-22.wp-container-core-group-is-layout-22 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-23.wp-container-core-group-is-layout-23{flex-direction:column;align-items:flex-start;}.wp-container-core-columns-is-layout-11.wp-container-core-columns-is-layout-11{flex-wrap:nowrap;}.wp-elements-c7765792366f74f0aa46c6015a888c5a a:where(:not(.wp-element-button)){color:var(--wp--preset--color--contrast);}
+.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1.wp-container-core-group-is-layout-1 > * + *{margin-block-start:0px;margin-block-end:0;}.wp-container-core-group-is-layout-2.wp-container-core-group-is-layout-2{gap:var(--wp--preset--spacing--20);}.wp-container-core-group-is-layout-3.wp-container-core-group-is-layout-3{justify-content:space-between;}.wp-container-core-buttons-is-layout-1.wp-container-core-buttons-is-layout-1{justify-content:center;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:565px;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > .alignwide{max-width:565px;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 .alignfull{max-width:none;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5.wp-container-core-group-is-layout-5 > * + *{margin-block-start:0px;margin-block-end:0;}.wp-elements-1680c2bc71100f2e64ac3c6d6b8ba50d a:where(:not(.wp-element-button)){color:var(--wp--preset--color--contrast-2);}.wp-container-core-group-is-layout-6.wp-container-core-group-is-layout-6{flex-wrap:nowrap;justify-content:center;}.wp-container-core-group-is-layout-7.wp-container-core-group-is-layout-7{flex-wrap:nowrap;justify-content:center;}.wp-container-core-group-is-layout-8.wp-container-core-group-is-layout-8{flex-wrap:nowrap;justify-content:center;}.wp-container-core-columns-is-layout-1.wp-container-core-columns-is-layout-1{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-2.wp-container-core-columns-is-layout-2{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-3.wp-container-core-columns-is-layout-3{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-group-is-layout-12.wp-container-core-group-is-layout-12 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-12.wp-container-core-group-is-layout-12.wp-container-core-group-is-layout-12.wp-container-core-group-is-layout-12 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-columns-is-layout-4.wp-container-core-columns-is-layout-4{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-5.wp-container-core-columns-is-layout-5{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-columns-is-layout-6.wp-container-core-columns-is-layout-6{flex-wrap:nowrap;gap:var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);}.wp-container-core-group-is-layout-16.wp-container-core-group-is-layout-16 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-16.wp-container-core-group-is-layout-16.wp-container-core-group-is-layout-16.wp-container-core-group-is-layout-16 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-content-1{flex-basis:1.25rem;}.wp-container-core-group-is-layout-19.wp-container-core-group-is-layout-19{gap:0px;flex-direction:column;align-items:center;}.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13.wp-container-core-column-is-layout-13 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14.wp-container-core-column-is-layout-14 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-7.wp-container-core-columns-is-layout-7{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15.wp-container-core-column-is-layout-15 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16.wp-container-core-column-is-layout-16 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-8.wp-container-core-columns-is-layout-8{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17.wp-container-core-column-is-layout-17 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18.wp-container-core-column-is-layout-18 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-9.wp-container-core-columns-is-layout-9{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19.wp-container-core-column-is-layout-19 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20.wp-container-core-column-is-layout-20 > * + *{margin-block-start:var(--wp--preset--spacing--10);margin-block-end:0;}.wp-container-core-columns-is-layout-10.wp-container-core-columns-is-layout-10{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);}.wp-container-core-group-is-layout-25.wp-container-core-group-is-layout-25 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-25.wp-container-core-group-is-layout-25.wp-container-core-group-is-layout-25.wp-container-core-group-is-layout-25 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-26.wp-container-core-group-is-layout-26{flex-direction:column;align-items:flex-start;}.wp-container-core-columns-is-layout-11.wp-container-core-columns-is-layout-11{flex-wrap:nowrap;}.wp-elements-c7765792366f74f0aa46c6015a888c5a a:where(:not(.wp-element-button)){color:var(--wp--preset--color--contrast);}
 </style>
 <style id='wp-block-template-skip-link-inline-css'>
 
@@ -166,6 +166,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 
 <link rel="canonical" href="index.html" />
 <link rel='shortlink' href='index.html' />
+<link rel="alternate" type="text/xml+oembed" href="https://spreadsheets-are-all-you-need.ai/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fspreadsheets-are-all-you-need.ai%2F&#038;format=xml" />
 <style id='wp-fonts-local'>
 @font-face{font-family:Inter;font-style:normal;font-weight:300 900;font-display:fallback;src:url('wp-content/themes/twentytwentyfour/assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2') format('woff2');font-stretch:normal;}
 @font-face{font-family:Cardo;font-style:normal;font-weight:400;font-display:fallback;src:url('wp-content/themes/twentytwentyfour/assets/fonts/cardo/cardo_normal_400.woff2') format('woff2');}
@@ -187,7 +188,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 </header>
 
 
-<main class="wp-block-group is-layout-flow wp-container-core-group-is-layout-22 wp-block-group-is-layout-flow" style="margin-top:0">
+<main class="wp-block-group is-layout-flow wp-container-core-group-is-layout-25 wp-block-group-is-layout-flow" style="margin-top:0">
 <div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 <div class="wp-block-group has-global-padding is-layout-constrained wp-container-core-group-is-layout-5 wp-block-group-is-layout-constrained">
 <h1 class="wp-block-heading has-text-align-center has-x-large-font-size">A low-code way to learn AI</h1>
@@ -217,8 +218,104 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 
 
 
-<div style="height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>
+<div style="height:23px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<style>
+.decorated {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+.decorated:before, .decorated:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: #111111;
+}
+.decorated:before {
+    margin-left: -50%;
+    text-align: right;
+}
+</style>
+
+
+
+<p class="has-text-align-center decorated has-contrast-2-color has-text-color has-link-color wp-elements-1680c2bc71100f2e64ac3c6d6b8ba50d"><strong>&nbsp;AS SEEN ON&nbsp;</strong></p>
+
+
+
+<div class="wp-block-group is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-6 wp-block-group-is-layout-flex">
+<figure class="wp-block-image size-medium is-resized"><a href="https://arstechnica.com/information-technology/2024/03/once-too-scary-to-release-gpt-2-gets-squeezed-into-an-excel-spreadsheet/" target="_blank" rel="noreferrer noopener"><img width="300" height="99" src="wp-content/uploads/2024/04/Ars_Technica_logo_2016.svg_-300x99.png" alt="" class="wp-image-46" style="width:176px;height:auto" srcset="wp-content/uploads/2024/04/Ars_Technica_logo_2016.svg_-300x99.png 300w, wp-content/uploads/2024/04/Ars_Technica_logo_2016.svg_-1024x340.png 1024w, wp-content/uploads/2024/04/Ars_Technica_logo_2016.svg_-768x255.png 768w, wp-content/uploads/2024/04/Ars_Technica_logo_2016.svg_-1536x509.png 1536w, wp-content/uploads/2024/04/Ars_Technica_logo_2016.svg_-2048x679.png 2048w" sizes="(max-width: 300px) 100vw, 300px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-full is-resized"><a href="https://lifehacker.com/tech/how-to-get-gpt2-to-run-in-spreadsheet" target="_blank" rel="noreferrer noopener"><img width="320" height="80" src="wp-content/uploads/2024/04/Lifehacker.svg_.png" alt="" class="wp-image-60" style="width:180px;height:auto" srcset="wp-content/uploads/2024/04/Lifehacker.svg_.png 320w, wp-content/uploads/2024/04/Lifehacker.svg_-300x75.png 300w" sizes="(max-width: 320px) 100vw, 320px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large is-resized"><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/chatgpts-ancestor-gpt-2-jammed-into-125gb-excel-sheet-llm-runs-inside-a-spreadsheet-that-you-can-download-from-github" target="_blank" rel="noreferrer noopener"><img width="1024" height="102" src="wp-content/uploads/2024/04/Toms_Hardware_logo.svg_-1024x102.png" alt="" class="wp-image-47" style="width:201px;height:auto" srcset="wp-content/uploads/2024/04/Toms_Hardware_logo.svg_-1024x102.png 1024w, wp-content/uploads/2024/04/Toms_Hardware_logo.svg_-300x30.png 300w, wp-content/uploads/2024/04/Toms_Hardware_logo.svg_-768x77.png 768w, wp-content/uploads/2024/04/Toms_Hardware_logo.svg_-1536x154.png 1536w, wp-content/uploads/2024/04/Toms_Hardware_logo.svg_-2048x205.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
 </div>
+
+
+
+<div class="wp-block-group is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-7 wp-block-group-is-layout-flex">
+<figure class="wp-block-image size-full"><a href="https://windowsreport.com/apparently-spreadsheets-are-all-you-need-to-understand-how-a-llm-works/" target="_blank" rel="noreferrer noopener"><img width="669" height="109" src="wp-content/uploads/2024/04/windowsreport-logo.webp" alt="" class="wp-image-49" srcset="wp-content/uploads/2024/04/windowsreport-logo.webp 669w, wp-content/uploads/2024/04/windowsreport-logo-300x49.webp 300w" sizes="(max-width: 669px) 100vw, 669px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://www.extremetech.com/computing/developer-crams-gpt-2-ai-model-into-excel-spreadsheet" target="_blank" rel="noreferrer noopener"><img width="1024" height="160" src="wp-content/uploads/2024/04/ExtremeTech_logo.svg_-1024x160.png" alt="" class="wp-image-50" srcset="wp-content/uploads/2024/04/ExtremeTech_logo.svg_-1024x160.png 1024w, wp-content/uploads/2024/04/ExtremeTech_logo.svg_-300x47.png 300w, wp-content/uploads/2024/04/ExtremeTech_logo.svg_-768x120.png 768w, wp-content/uploads/2024/04/ExtremeTech_logo.svg_-1536x240.png 1536w, wp-content/uploads/2024/04/ExtremeTech_logo.svg_-2048x320.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://www.windowscentral.com/software-apps/can-an-excel-spreadsheet-with-gpt-2-replace-copilot-pro-no-but-it-shows-us-how-ai-works" target="_blank" rel="noreferrer noopener"><img width="1024" height="107" src="wp-content/uploads/2024/04/Windows_Central_logo.svg_-1024x107.png" alt="" class="wp-image-51" srcset="wp-content/uploads/2024/04/Windows_Central_logo.svg_-1024x107.png 1024w, wp-content/uploads/2024/04/Windows_Central_logo.svg_-300x31.png 300w, wp-content/uploads/2024/04/Windows_Central_logo.svg_-768x80.png 768w, wp-content/uploads/2024/04/Windows_Central_logo.svg_-1536x160.png 1536w, wp-content/uploads/2024/04/Windows_Central_logo.svg_-2048x214.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+</div>
+
+
+
+<div class="wp-block-group is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-8 wp-block-group-is-layout-flex">
+<figure class="wp-block-image size-large is-resized"><a href="https://www.techradar.com/pro/chatgpts-precursor-now-runs-in-excel" target="_blank" rel="noreferrer noopener"><img width="1024" height="165" src="wp-content/uploads/2024/04/TechRadar_logo.svg_-1024x165.png" alt="" class="wp-image-48" style="width:160px;height:auto" srcset="wp-content/uploads/2024/04/TechRadar_logo.svg_-1024x165.png 1024w, wp-content/uploads/2024/04/TechRadar_logo.svg_-300x48.png 300w, wp-content/uploads/2024/04/TechRadar_logo.svg_-768x124.png 768w, wp-content/uploads/2024/04/TechRadar_logo.svg_.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-full is-resized"><a href="https://news.ycombinator.com/item?id=39700256" target="_blank" rel="noreferrer noopener"><img width="600" height="120" src="wp-content/uploads/2024/04/hacker-news1.webp" alt="" class="wp-image-69" style="width:187px;height:auto" srcset="wp-content/uploads/2024/04/hacker-news1.webp 600w, wp-content/uploads/2024/04/hacker-news1-300x60.webp 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></figure>
+</div>
+</div>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%">
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>&#8220;Probably the best 10 minutes you can invest to understand LLMs&#8221;</p>
+<cite><a href="https://www.linkedin.com/posts/guillaumedecugis_demystifying-how-gpt-works-from-architecture-activity-7174756022106910720-mvor?utm_source=share&amp;utm_medium=member_desktop">Guillaume Decugis</a></cite></blockquote>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>&#8220;I have seen nothing which could come close in traceability and accessibility to understand transformers and LLMs&#8221;</p>
+<cite><a href="https://www.linkedin.com/posts/maximilian-hentschel_llm-excel-transformers-activity-7174358694938185730-c5G8?utm_source=share&amp;utm_medium=member_desktop">Maximilian Hentschel</a></cite></blockquote>
+</div>
+</div>
+
+
+
+<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 
 
 
@@ -265,12 +362,12 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 
 
 
-<div class="wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-9 wp-block-group-is-layout-constrained">
+<div class="wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-12 wp-block-group-is-layout-constrained">
 <div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 
 
 
-<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%">
 <h3 class="wp-block-heading is-style-default">Sophisticated yet simple</h3>
 
@@ -310,7 +407,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 
 
 
-<div class="wp-block-columns alignwide reverse-mobile is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-columns alignwide reverse-mobile is-layout-flex wp-container-core-columns-is-layout-3 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
 <figure class="wp-block-image size-full is-style-rounded"><img width="720" height="405" src="wp-content/uploads/2024/02/GPT2-at-a-glance-overview.png" alt="" class="wp-image-34" srcset="wp-content/uploads/2024/02/GPT2-at-a-glance-overview.png 720w, wp-content/uploads/2024/02/GPT2-at-a-glance-overview-300x169.png 300w" sizes="(max-width: 720px) 100vw, 720px" /></figure>
 </div>
@@ -411,29 +508,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 
 
 
-<div class="wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-13 wp-block-group-is-layout-constrained">
-<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
-
-
-
-<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-3 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40%">
-<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
-<p><a href="https://www.linkedin.com/posts/guillaumedecugis_demystifying-how-gpt-works-from-architecture-activity-7174756022106910720-mvor?utm_source=share&utm_medium=member_desktop">&#8220;Probably the best 10 minutes you can invest to understand LLMs&#8221;</a></p>
-</blockquote>
-</div>
-
-
-
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%">
-<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
-<p><a href="https://www.linkedin.com/posts/maximilian-hentschel_llm-excel-transformers-activity-7174358694938185730-c5G8?utm_source=share&amp;utm_medium=member_desktop">&#8220;I have seen nothing which could come close in traceability and accessibility to understand transformers and LLMs&#8221;</a></p>
-</blockquote>
-</div>
-</div>
-
-
-
+<div class="wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-16 wp-block-group-is-layout-constrained">
 <div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 
 
@@ -527,7 +602,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 
 
 <div class="wp-block-group alignfull has-base-2-background-color has-background has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
-<div class="wp-block-group is-vertical is-content-justification-center is-layout-flex wp-container-core-group-is-layout-16 wp-block-group-is-layout-flex">
+<div class="wp-block-group is-vertical is-content-justification-center is-layout-flex wp-container-core-group-is-layout-19 wp-block-group-is-layout-flex">
 <h2 class="wp-block-heading has-text-align-center is-style-default" id="watch-the-lessons">Watch the lessons </h2>
 
 
@@ -761,7 +836,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 
 
 
-<p><a href="https://github.com/ianand/spreadsheets-are-all-you-need">ianand/spreadsheets-are-all-you-need</a> on Github</p>
+<p><a href="https://github.com/ianand/spreadsheets-are-all-you-need">ianand/spreadsheets-are-all-you-need</a>&nbsp;on Github</p>
 
 
 
@@ -820,7 +895,7 @@ ol,ul{padding-left: var(--wp--preset--spacing--10);}
 <div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
 <div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-11 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:30%">
-<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-23 wp-block-group-is-layout-flex"><p class="wp-block-site-title has-medium-font-size"><a href="index.html" target="_self" rel="home" aria-current="page">Spreadsheets are all you need.ai</a></p>
+<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-26 wp-block-group-is-layout-flex"><p class="wp-block-site-title has-medium-font-size"><a href="index.html" target="_self" rel="home" aria-current="page">Spreadsheets are all you need.ai</a></p>
 
 <p class="wp-block-site-tagline has-small-font-size">A low-code way to learn AI</p>
 

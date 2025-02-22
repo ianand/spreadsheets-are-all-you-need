@@ -4,11 +4,246 @@
 <atom:link href="https://spreadsheets-are-all-you-need.ai/feed/" rel="self" type="application/rss+xml"></atom:link>
 <link/>https://spreadsheets-are-all-you-need.ai
 	<description>Learn AI topics using familiar tools</description>
-<lastbuilddate>Tue, 18 Feb 2025 22:34:18 +0000</lastbuilddate>
+<lastbuilddate>Sat, 22 Feb 2025 19:01:14 +0000</lastbuilddate>
 <language>en-US</language>
 <sy:updateperiod>
 	hourly	</sy:updateperiod>
 <sy:updatefrequency>
 	1	</sy:updatefrequency>
+<item>
+<title>FLOPS Demystified: AI and the math behind DeepSeek training costs</title>
+<link/>https://spreadsheets-are-all-you-need.ai/flops-demystified-ai-and-the-math-behind-deepseek-training-costs/
+		
+		<dc:creator><![CDATA[ishan@spreadsheets-are-all-you-need.ai]]></dc:creator>
+<pubdate>Sat, 22 Feb 2025 18:24:09 +0000</pubdate>
+<category><![CDATA[Uncategorized]]></category>
+<guid ispermalink="false">https://spreadsheets-are-all-you-need.ai/?p=1508</guid>
+<description><![CDATA[This might be my most important AI article yet but it's also my biggest FLOP. FLOPs are one of the most fundamental metrics in AI. To understand how AI works ...]]></description>
+<content:encoded><![CDATA[
+<style>
+.entry-content {
+font-size: 1.35em;
+}
+</style>
+
+
+
+<p>This might be my most important AI article yet but it's also my biggest FLOP.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="FLOPS Demystified: AI and the math behind DeepSeek training costs" width="800" height="450" src="https://www.youtube.com/embed/T3JiBtHHTMU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>FLOPs are one of the most fundamental metrics in AI. To understand how AI works and what it costs to train amazing models like ChatGPT or DeepSeek, you need to understand FLOPs.</p>
+
+
+
+<p>In the accompanying video and this article we will:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Explore the difference between FLOP, FLOPS, &amp; FLOPs</li>
+
+
+
+<li>Reveal why AI is fundamentally different from traditional software&nbsp;</li>
+
+
+
+<li>Crack open GPT-2 (using spreadsheets-are-all-you-need) to count every FLOP</li>
+
+
+
+<li>Apply these insights to analyze DeepSeek's viral "$5.3M training cost" claim and uncover what this number really means (and what it doesn't)</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading"><strong>What Are FLOPs?</strong></h2>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-1024x576.png" alt="" class="wp-image-1509" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>FLOP stands for FLoating point OPeration. Any basic mathematical operation (like addition or multiplication) performed on decimal numbers is considered a FLOP. For example, if you add 5.2 and 4.4 to get 9.6 you just did a single FLOP.</p>
+
+
+
+<p>Confusingly, FLOPs (with a lowercase 's') and FLOPS (with a capital 'S') are different:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>FLOPs (with a lowercase 's'): how many floating point operations occur</li>
+
+
+
+<li>FLOPS (with a capital 'S'): how many operations happen per second.</li>
+</ul>
+
+
+
+<p>As an analogy you can think of FLOPs as “miles” (a quantity of something) and FLOPS as "miles per hour" (how fast that number changes over time).</p>
+
+
+
+<h2 class="wp-block-heading"><strong>Why FLOPs Matter in AI</strong></h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-1024x576.png" alt="" class="wp-image-1510" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Traditional software applications like Microsoft Word or PowerPoint primarily use logic and control flow statements - if/then conditions, loops, and function calls. AI models, particularly large language models, work fundamentally differently. They convert words into numbers, perform massive amounts of mathematical operations on these numbers, and then convert the resulting numbers back into words.</p>
+
+
+
+<p>Let's look at a simplified example. You’ve probably heard that AI models are trained to fill in the blank and complete passages like this one: "Mike is quick. He moves ___".&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m33s130-1024x576.png" alt="" class="wp-image-1511" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m33s130-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m33s130-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m33s130-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m33s130.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>To solve this, the AI model will,</p>
+
+
+
+<ol class="wp-block-list">
+<li>Convert each word into floating point numbers (aka decimal numbers)</li>
+
+
+
+<li>Perform complex mathematical calculations on those numbers</li>
+
+
+
+<li>Produce a final decimal number</li>
+
+
+
+<li>Maps that final decimal number back to the known words in its vocabulary, with closer matches getting higher probabilities</li>
+</ol>
+
+
+
+<p>For our example passage "Mike is quick. He moves ___", words like "quickly" and "fast" would be chosen in step 4 because they map to numbers that are close to the model's calculated result in step 3.</p>
+
+
+
+<h2 class="wp-block-heading"><strong>Measuring FLOPs in Practice</strong></h2>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m03s059-1024x576.png" alt="" class="wp-image-1512" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m03s059-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m03s059-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m03s059-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m03s059.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Using the web version of Spreadsheets Are All You Need, we can actually count these operations in a real language model without leaving our browser. Watch the accompanying video and follow along the steps yourself to see how easy it is to actually count FLOPs!</p>
+
+
+
+<p>When processing just six tokens (words or parts of words), GPT-2 Small performs approximately one billion floating point operations.&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m35s154-1024x576.png" alt="" class="wp-image-1513" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m35s154-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m35s154-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m35s154-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m35s154.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>This matches closely with theoretical estimates derived from the model's architecture. A common useful estimate is that the number of FLOPs needed to process one token is approximately two times the number of parameters in the model. This makes sense when you consider that each neuron in a neural network primarily performs two operations (multiplication and addition) for each parameter.</p>
+
+
+
+<h2 class="wp-block-heading"><strong>Understanding AI Training Costs</strong></h2>
+
+
+
+<p>This brings us to the recent discussion around DeepSeek's training costs. DeepSeek reported spending $5.3 million to train their latest model. As we show in the video, this estimate does line up with theoretical estimates and the reported data from their technical report:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m53s008-1024x576.png" alt="" class="wp-image-1514" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m53s008-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m53s008-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m53s008-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h19m53s008.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Unfortunately, this led to articles like the one below, comparing this figure to OpenAI's reported $5 billion in development costs.&nbsp;</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m19s557-1024x576.png" alt="" class="wp-image-1515" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m19s557-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m19s557-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m19s557-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m19s557.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>This comparison is deeply misleading.</strong></p>
+
+
+
+<p>The $5.3 million represents just the GPU compute costs for the final training run. It doesn't include:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Costs of research and experimentation leading up to the final architecture</li>
+
+
+
+<li>Failed training attempts</li>
+
+
+
+<li>Data collection and processing</li>
+
+
+
+<li>Personnel costs</li>
+
+
+
+<li>Infrastructure beyond raw compute</li>
+</ul>
+
+
+
+<p>Yes DeepSeek probably spent $5.4 million on their <strong>final</strong> training run <strong>but</strong> that was not the total amount they spent to build the model.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m47s867-1024x576.png" alt="" class="wp-image-1516" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m47s867-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m47s867-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m47s867-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h20m47s867.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Think of it like measuring the cost of building a house by only counting the lumber used in the final construction. Yes, lumber is a significant expense, but it's far from the total cost of creating a house.</p>
+
+
+
+<h2 class="wp-block-heading"><strong>The Reality of Model Development</strong></h2>
+
+
+
+<p>As I argue in the video, the development of frontier AI models is more akin to Thomas Edison's journey to create the light bulb. Edison didn't just build one light bulb. He made nearly 3,000 attempts before finding a design that worked. Each attempt represented real costs in materials, time, and labor.</p>
+
+
+
+<p>Similarly, creating a successful AI model requires numerous experiments, failed attempts, and iterations. The final training run is just the tip of a very expensive iceberg.</p>
+
+
+
+<p>The next time you see headlines about FLOPs or AI training costs, hopefully you’ll now be better prepared to not only understand them but also put them in the proper context.&nbsp;</p>
+
+
+
+<p>Best of luck on your AI journey.</p>
+]]></content:encoded>
+</item>
 </channel>
 </rss>

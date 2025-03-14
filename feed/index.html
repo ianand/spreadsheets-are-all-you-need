@@ -4,12 +4,81 @@
 <atom:link href="https://spreadsheets-are-all-you-need.ai/feed/" rel="self" type="application/rss+xml"></atom:link>
 <link/>https://spreadsheets-are-all-you-need.ai
 	<description>Learn AI topics using familiar tools</description>
-<lastbuilddate>Sat, 22 Feb 2025 19:01:14 +0000</lastbuilddate>
+<lastbuilddate>Fri, 14 Mar 2025 21:59:34 +0000</lastbuilddate>
 <language>en-US</language>
 <sy:updateperiod>
 	hourly	</sy:updateperiod>
 <sy:updatefrequency>
 	1	</sy:updatefrequency>
+<item>
+<title>ArrrZero: Why DeepSeek R1 is less important than R1-Zero</title>
+<link/>https://spreadsheets-are-all-you-need.ai/arrrzero-why-deepseek-r1-is-less-important-than-r1-zero/
+		
+		<dc:creator><![CDATA[ishan@spreadsheets-are-all-you-need.ai]]></dc:creator>
+<pubdate>Fri, 14 Mar 2025 21:57:23 +0000</pubdate>
+<category><![CDATA[Uncategorized]]></category>
+<guid ispermalink="false">https://spreadsheets-are-all-you-need.ai/?p=285</guid>
+<description><![CDATA[The headlines about DeepSeek R1&#8217;s cost are missing an even bigger story, the R1-Zero model. This model, and research behind it, are reshaping how we thought AI assistants should be ...]]></description>
+<content:encoded><![CDATA[
+<p>The headlines about DeepSeek R1&#8217;s cost are missing an even bigger story, the R1-Zero model. This model, and research behind it, are reshaping how we thought AI assistants should be trained.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="ArrrZero: Why DeepSeek R1 is less important than R1-Zero" width="800" height="450" src="https://www.youtube.com/embed/DE6WpzsSvgU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+
+
+<p>To understand why the R1-Zero model matters, we have to look at how AI chatbots like ChatGPT are typically created. When an AI model is trained on text from the internet, the resulting model is actually pretty dumb. Chatting with it is useless because it only knows how to literally imitate text on the internet. For example, in the <a href="https://www.youtube.com/watch?v=DE6WpzsSvgU">video for this blog post</a>, when the model (called a &#8220;base model&#8221;) is given a prompt like &#8220;First Name:&#8221;, it replies &#8220;Name:, Address:&#8221;. Essentially, the model is trying to guess what kind of web page might contain the prompt and then replies with the imagined content from the rest of that hypothetical web page. In this case, it sees &#8220;First Name:&#8221; and guesses it&#8217;s part of a form, so it replies with the rest of the form (i.e. Address). This is effective enough for crafting <a href="https://openai.com/index/better-language-models/">fake news stories about Unicorns</a> but it can&#8217;t carry a conversation nor answer user questions directly.</p>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h49m48s411-1024x576.png" alt="" class="wp-image-1534" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h49m48s411-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h49m48s411-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h49m48s411-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h49m48s411.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>To turn this &#8220;base model&#8221; (also known as a &#8220;pretrained model&#8221;) into a chatbot like ChatGPT has typically involved a complex and labor-intensive process. The process requires the three major steps shown in the diagram below (adapted from the <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A">State of GPT</a>) that are labeled &#8220;Supervised Finetuning&#8221;, &#8220;Reward Modeling&#8221;, and &#8220;Reinforcement Learning&#8221;.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h48m07s751-1024x576.png" alt="" class="wp-image-1533" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h48m07s751-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h48m07s751-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h48m07s751-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h48m07s751.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The &#8220;Supervised Finetuning&#8221; step requires humans to write thousands of example conversations teaching the model how a helpful AI assistant should behave. Even once the model has learned from those examples, humans are needed to grade the quality of the responses the model produces which further fine tunes the quality of the model in a process called &#8220;Reinforcement Learning from Human Feedback (RLHF)&#8221;.</p>
+
+
+
+<p>DeepSeek R1-Zero changes the game by eliminating most of this human work. Instead of requiring armies of people to train and fine-tune the AI, it uses math and coding problems to teach the AI how to think and reason. Because these problems have clear right and wrong answers, computers can automatically check if the AI is correct without any human oversight needed.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h55m01s210-1024x576.png" alt="" class="wp-image-1535" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h55m01s210-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h55m01s210-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h55m01s210-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h55m01s210.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>&#8220;It&#8217;s an aha moment, not just for the model, but for the researchers,&#8221; notes the DeepSeek team, describing the moment their AI learned to catch its own mistakes and consider different approaches to problems.</p>
+
+
+
+<p>This breakthrough could accelerate AI development by removing what experts call the &#8220;human bottleneck&#8221; (the need for extensive human input in training AI systems). It&#8217;s already being recognized as a major advancement, with some experts considering it even more significant than other recent AI developments that have grabbed headlines.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h56m15s271-1024x576.png" alt="" class="wp-image-1536" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h56m15s271-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h56m15s271-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h56m15s271-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/03/vlcsnap-2025-03-14-14h56m15s271.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>What makes this particularly exciting is that several teams have already successfully reproduced similar results using smaller-scale versions of this approach, suggesting this could become a new standard way of creating AI assistants that can think and reason effectively.</p>
+
+
+
+<p>As AI continues to evolve, DeepSeek R1-Zero&#8217;s innovative training method might just be the key to creating smarter AI assistants more quickly and efficiently than ever before.</p>
+]]></content:encoded>
+</item>
 <item>
 <title>FLOPS Demystified: AI and the math behind DeepSeek training costs</title>
 <link/>https://spreadsheets-are-all-you-need.ai/flops-demystified-ai-and-the-math-behind-deepseek-training-costs/
@@ -33,7 +102,7 @@ font-size: 1.35em;
 
 
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe title="FLOPS Demystified: AI and the math behind DeepSeek training costs" width="800" height="450" src="https://www.youtube.com/embed/T3JiBtHHTMU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe loading="lazy" title="FLOPS Demystified: AI and the math behind DeepSeek training costs" width="800" height="450" src="https://www.youtube.com/embed/T3JiBtHHTMU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div></figure>
 
 
@@ -68,7 +137,7 @@ font-size: 1.35em;
 
 
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-1024x576.png" alt="" class="wp-image-1509" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-1024x576.png" alt="" class="wp-image-1509" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h21m07s002.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -98,7 +167,7 @@ font-size: 1.35em;
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-1024x576.png" alt="" class="wp-image-1510" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-1024x576.png" alt="" class="wp-image-1510" srcset="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-1024x576.png 1024w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-300x169.png 300w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438-768x432.png 768w, https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/02/vlcsnap-2025-02-22-10h18m47s438.png 1280w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -148,7 +217,7 @@ font-size: 1.35em;
 
 
 
-<p>Using the web version of Spreadsheets Are All You Need, we can actually count these operations in a real language model without leaving our browser. Watch the accompanying video and follow along the steps yourself to see how easy it is to actually count FLOPs!</p>
+<p>Using the <a href="https://spreadsheets-are-all-you-need.ai/gpt2/">web version of Spreadsheets Are All You Need</a>, we can actually count these operations in a real language model without leaving our browser. Watch the accompanying video and follow along the steps yourself to see how easy it is to actually count FLOPs!</p>
 
 
 

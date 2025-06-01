@@ -1459,7 +1459,7 @@ function run_all_cells_reset() {
     background-color: grey;
     padding:10px 10px 10px 10px;
     color: white;
-    width: 50%;
+    /*width: 50%; */
   }
 
   .play-pause-button.sticky {
@@ -1671,8 +1671,55 @@ Prompt <input id="user_prompt" onchange="run_all_cells_reset()" type="text" valu
 <button id="run_all_cells_button" onclick="run_all_cells()">Run</button>
 <input checked="true" id="followRunningCell" onclick="window.followRunningCell = document.querySelector('#followRunningCell').checked" type="checkbox"/>
 <label for="followRunningCell">Follow</label>
+<label for="jumpSelect" style="margin-left: 20px; color:white;">Jump to:</label>
+<select id="jumpSelect" style="margin-left: 5px;">
+<option value=""></option>
+<option value="jump-matrix-operations">Matrix Operations</option>
+<option value="jump-tokenization">Tokenization</option>
+<option value="jump-token-embeddings">Token Embeddings</option>
+<option value="jump-position-embeddings">Position Embeddings</option>
+<optgroup label="Block Steps">
+<option value="jump-block-input">Block Input (Step 1)</option>
+<option value="jump-layer-norm-1">LayerNorm 1 (Steps 2-3)</option>
+<option value="jump-attention">Attention (Steps 4-9)</option>
+<option value="jump-residual-1">Residual 1 (Step 10)</option>
+<option value="jump-layer-norm-2">LayerNorm 2 (Steps 11-12)</option>
+<option value="jump-mlp">MLP (Steps 13-15)</option>
+<option value="jump-residual-2">Residual 2 (Step 16)</option>
+<option value="jump-block-iteration">Iteration</option>
+</optgroup>
+<optgroup label="Language Head">
+<option value="jump-final-layer-norm">LayerNorm</option>
+<option value="jump-unembedding">Logits</option>
+<option value="jump-predicted-token">Predicted Token</option>
+</optgroup>
+</select>
 </input></div>
-<h2> Define Basic Matrix Operations </h2>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const jumpSelect = document.getElementById('jumpSelect');
+    jumpSelect.addEventListener('change', function() {
+      const targetId = this.value;
+      if (!targetId) return;   // “Jump to…” placeholder selected
+
+      // Find the target element by id
+      const el = document.getElementById(targetId);
+      if (!el) return;         // no such anchor
+
+      // Smooth scroll so that the heading appears just below #globalPlayControls
+      const headerOffset = document.getElementById('globalPlayControls').offsetHeight + 10;
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+    });
+  });
+</script>
+<h2 id="jump-matrix-operations"> Define Basic Matrix Operations </h2>
 <p> This section defines some basic matrix operations. Matricies are just simple 2D JavaScript arrays.</p>
 <saayn-cell id="code_for_matrix_add">
 <saayn-code><script type="text/plain">
@@ -1765,7 +1812,7 @@ async function matrix_last_row(table, offset) {
 }
 </script>
 </saayn-code></saayn-cell>
-<h2>Tokenization Steps</h2>
+<h2 id="jump-tokenization">Tokenization Steps</h2>
 <p>This section tokenizes the prompt you entered into token using the Byte Pair Encoding (BPE) algorithm.</p>
 <script type="text/javascript">
 async function fetch_csv(fileName, params) {
@@ -2027,7 +2074,7 @@ async function get_final_tokens(table) {
 <saayn-cell>
 <saayn-sheet formula="get_final_tokens(prompt_to_tokens[])" id="final_tokens" row_labels="['Tokens', 'Token IDs']"></saayn-sheet>
 </saayn-cell>
-<h2>Tokens to token embeddings steps</h2>
+<h2 id="jump-token-embeddings">Tokens to token embeddings steps</h2>
 <saayn-cell>
 <saayn-sheet formula="fetch_csv('model_wte.csv')" id="model_wte"></saayn-sheet>
 </saayn-cell>
@@ -2053,7 +2100,7 @@ async function tokens_to_token_embeddings(token_ids_table, token_embeddings_tabl
 <saayn-cell>
 <saayn-sheet formula="tokens_to_token_embeddings(matrix_last_row(final_tokens[]), model_wte[])" id="token_embeddings" row_labels="matrix_last_row(final_tokens[],1)"></saayn-sheet>
 </saayn-cell>
-<h2>Positional Embedding Steps</h2>
+<h2 id="jump-position-embeddings">Positional Embedding Steps</h2>
 <saayn-cell>
 <saayn-sheet formula="fetch_csv('model_wpe.csv')" id="model_wpe">
 </saayn-sheet>
@@ -2137,7 +2184,7 @@ numbering and breakdown of steps is arbitrary and can be rearranged.</p>
 })();
 </script></saayn-code>
 </saayn-cell>
-<h3>Step 1: Get the input embedding</h3>
+<h3 id="jump-block-input">Step 1: Get the input embedding</h3>
 <saayn-cell id="code_for_copy_table">
 <saayn-code><script type="text/plain">
 async function copy_table(table1){  
@@ -2149,7 +2196,7 @@ async function copy_table(table1){
 <saayn-sheet formula="copy_table(position_embeddings[])" id="block_step_1" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
 </saayn-cell>
-<h3>Steps 2 - 3: First LayerNorm</h3>
+<h3 id="jump-layer-norm-1">Steps 2 - 3: First LayerNorm</h3>
 <saayn-cell id="code_for_normalize_by_row">
 <saayn-code>
 <script type="text/plain">
@@ -2224,7 +2271,7 @@ async function copy_table(table1){
 <saayn-sheet formula="layernorm_gain_and_bias(block_step_2[],layernorm_1_gain[],layernorm_1_bias[])" id="block_step_3" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
 </saayn-cell>
-<h3>Steps 4 - 9: Multi-head attention</h3>
+<h3 id="jump-attention">Steps 4 - 9: Multi-head attention</h3>
 <saayn-cell>
 <saayn-sheet formula="fetch_csv('model_h0_attn_c_attn_w.csv')" id="attention_weight_matrix">
 </saayn-sheet>
@@ -2408,12 +2455,12 @@ async function multihead_matrix_multiply2(table1, table2) {
 <saayn-sheet formula="matrix_add(matrix_multiply(block_step_8[],attention_projection_weights[]),attention_projection_bias[])" id="block_step_9" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
 </saayn-cell>
-<h3>Step 10: Residual Connection</h3>
+<h3 id="jump-residual-1">Step 10: Residual Connection</h3>
 <saayn-cell>
 <saayn-sheet formula="matrix_add(block_step_9[], block_step_1[])" id="block_step_10" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
 </saayn-cell>
-<h3>Steps 11 - 12: Second LayerNorm</h3>
+<h3 id="jump-layer-norm-2">Steps 11 - 12: Second LayerNorm</h3>
 <saayn-cell>
 <saayn-sheet formula="normalize_by_row(block_step_10[])" id="block_step_11" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
@@ -2430,7 +2477,7 @@ async function multihead_matrix_multiply2(table1, table2) {
 <saayn-sheet formula="layernorm_gain_and_bias(block_step_11[],layernorm_2_gain[],layernorm_2_bias[])" id="block_step_12" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
 </saayn-cell>
-<h3>Steps 13 - 15: Multilayer Perceptron</h3>
+<h3 id="jump-mlp">Steps 13 - 15: Multilayer Perceptron</h3>
 <saayn-cell>
 <saayn-sheet formula="fetch_csv('model_h0_mlp_c_fc_w.csv')" id="mlp_fc_weights">
 </saayn-sheet>
@@ -2480,12 +2527,12 @@ async function gelu(table) {
 <saayn-sheet formula="matrix_add(matrix_multiply(block_step_14[], mlp_proj_weights[]), mlp_proj_bias[])" id="block_step_15" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
 </saayn-cell>
-<h3>Steps 16: Second Residual Connection</h3>
+<h3 id="jump-residual-2">Steps 16: Second Residual Connection</h3>
 <saayn-cell>
 <saayn-sheet formula="matrix_add(block_step_15[], block_step_10[])" id="block_step_16" row_labels="matrix_last_row(final_tokens[],1)">
 </saayn-sheet>
 </saayn-cell>
-<h2>Run all the Block steps again for 11 more times</h2>
+<h2 id="jump-block-iteration">Run all the Block steps again for 11 more times</h2>
 <saayn-cell id="code_for_iterate_blocks"><saayn-code>
 <script type="text/plain"> 
 async function iterate_blocks(startElement, endElement, iterations) {    
@@ -2576,7 +2623,7 @@ async function iterate_blocks(startElement, endElement, iterations) {
 })();
 </script>
 </saayn-code></saayn-cell>
-<h2>Final LayerNorm</h2>
+<h2 id="jump-final-layer-norm">Final LayerNorm</h2>
 <saayn-cell>
 <saayn-sheet formula="matrix_last_row(block_step_16[])" id="last_hidden_state">
 </saayn-sheet>
@@ -2597,11 +2644,11 @@ async function iterate_blocks(startElement, endElement, iterations) {
 <saayn-sheet formula="layernorm_gain_and_bias(last_layernorm[],layernorm_gain[],layernorm_bias[])" id="predicted_embedding">
 </saayn-sheet>
 </saayn-cell>
-<h2>Unembedding into Logits</h2>
+<h2 id="jump-unembedding">Unembedding into Logits</h2>
 <saayn-cell>
 <saayn-sheet formula="matrix_multiply(model_wte[],matrix_transpose(predicted_embedding[]))" id="logits"></saayn-sheet>
 </saayn-cell>
-<h2>Logits into predicted token</h2>
+<h2 id="jump-predicted-token">Logits into predicted token</h2>
 <saayn-cell id="code_for_predicted_token"><saayn-code>
 <script type="text/plain"> 
 async function predicted_token(params) {    

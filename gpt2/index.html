@@ -1013,13 +1013,21 @@ window.Saayn.get_matrix_from_table = async function(obj) {
 </script>
 <template id="saayn-code-template">
 <style>
-    .saayn-code-textarea {
+    /* 1) This is the wrapper that stays resizable all the time */
+    .resizable-editor-container {
       width: 100%;
-      height: 200px;
+      height: 200px;            /* initial height */
       border: 2px solid #7B7B7B;
+      resize: vertical;         /* user can drag up/down at any time */
+      overflow: auto;           /* allow scroll if Ace’s content is larger */
+    }
+    /* 2) Have the actual Ace DIV always fill its parent */
+    .resizable-editor-container .saayn-code-textarea {
+      width: 100%;
+      height: 100%;
     }
   </style>
-<div>
+<div class="resizable-editor-container">
 <div class="saayn-code-textarea" id="editor"></div>
 <slot></slot>
 </div>

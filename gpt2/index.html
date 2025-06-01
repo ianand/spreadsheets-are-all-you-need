@@ -162,13 +162,19 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
     }
     .navigation-container {
       margin-left: 10px;
-      font-size: 1.25em;        
+      font-size: 1.25em;
+      display: flex;
+      align-items: center;        
     }
     
     .formula-box {
         padding: 5px;
         width: 60%;
         margin: 10px 10px 10px 10px;
+        resize: both;
+        overflow: auto;
+        min-height: 1.5em; 
+        height: 1.5em;
     }
     .namebox-button {
         padding: 5px 10px;
@@ -194,7 +200,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
   </style>
 <div class="spreadsheet-widget">
 <div class="navigation-container">
-<span> Formula: </span><input class="formula-box" type="text"/>
+<span> Formula: </span><textarea class="formula-box" type="text"></textarea>
 <br/>
 <input class="namebox-input" placeholder="R1C1 address" type="text"/>
 <button class="namebox-button">Go to R1C1 address</button>

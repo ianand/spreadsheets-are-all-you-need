@@ -1365,9 +1365,10 @@ function scrollToElement(targetElement, duration = 1000) {
     
     // Adjust target to leave space for the global play controls
     const button = document.getElementById('globalPlayControls');
-    const buttonOffsetTop = button.offsetTop;
-    if (window.scrollY > buttonOffsetTop) {
-      targetPosition -= button.offsetHeight + 10;
+    const siteHeader = document.querySelector("header");
+    const offsetTop = button.offsetTop + siteHeader.getBoundingClientRect().bottom;;
+    if (window.scrollY > offsetTop) {
+      targetPosition -= offsetTop + 10;
     }
     
     const startTime = performance.now();
@@ -1473,10 +1474,19 @@ function run_all_cells_reset() {
   document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('globalPlayControls');
     const buttonOffsetTop = button.offsetTop;
+    const siteHeader = document.querySelector("header");
 
     window.addEventListener('scroll', function() {
       if (window.scrollY > buttonOffsetTop) {
         button.classList.add('sticky');
+
+        const headerBottom = siteHeader.getBoundingClientRect().bottom;
+
+        // clamp to zero in case negative
+        const offset = Math.max(headerBottom, 0);
+
+
+        button.style.top = offset + 'px';
       } else {
         button.classList.remove('sticky');
       }
@@ -1707,9 +1717,10 @@ Prompt <input id="user_prompt" onchange="run_all_cells_reset()" type="text" valu
       if (!el) return;         // no such anchor
 
       // Smooth scroll so that the heading appears just below #globalPlayControls
+      const siteHeaderOffset = document.querySelector("header").getBoundingClientRect().bottom;
       const headerOffset = document.getElementById('globalPlayControls').offsetHeight + 10;
       const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerOffset;
+      const offsetPosition = elementPosition - headerOffset - siteHeaderOffset;
 
       window.scrollTo({
         top: offsetPosition,

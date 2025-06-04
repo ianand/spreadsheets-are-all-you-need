@@ -4,12 +4,503 @@
 <atom:link href="https://spreadsheets-are-all-you-need.ai/feed/" rel="self" type="application/rss+xml"></atom:link>
 <link/>https://spreadsheets-are-all-you-need.ai
 	<description>Learn AI topics using familiar tools</description>
-<lastbuilddate>Fri, 09 May 2025 19:39:40 +0000</lastbuilddate>
+<lastbuilddate>Wed, 04 Jun 2025 15:39:36 +0000</lastbuilddate>
 <language>en-US</language>
 <sy:updateperiod>
 	hourly	</sy:updateperiod>
 <sy:updatefrequency>
 	1	</sy:updatefrequency>
+<item>
+<title>SessionSorter for AI Engineer World’s Fair 2025</title>
+<link/>https://spreadsheets-are-all-you-need.ai/sessionsorter-for-ai-engineer-worlds-fair-2025/
+		
+		<dc:creator><![CDATA[ishan@spreadsheets-are-all-you-need.ai]]></dc:creator>
+<pubdate>Wed, 04 Jun 2025 15:37:29 +0000</pubdate>
+<category><![CDATA[Uncategorized]]></category>
+<guid ispermalink="false">https://spreadsheets-are-all-you-need.ai/?p=1641</guid>
+<description><![CDATA[OpenAI API Key Your Prompt help me decide between these sessions Ask ChatGPT Hide Sessions &#215;]]></description>
+<content:encoded><![CDATA[
+  <style>
+    /* Namespace: csp- for "Conference Session Picker" */
+    body.csp-body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    h1.csp-heading {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    #csp-apiKeyContainer {
+      margin-bottom: 1rem;
+      max-width: 640px;
+    }
+
+    #csp-stickyControls {
+      position: sticky;
+      top: 75px;
+      left: 0;
+      right: 0;
+      background: #f9fafb;
+      padding: 1rem 2rem;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    label.csp-label {
+      font-weight: 600;
+      display: block;
+    }
+
+    textarea.csp-textarea, input[type="text"].csp-input {
+      padding: 0.5rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      width: 100%;
+      font-size: 0.95rem;
+    }
+
+    button.csp-button {
+      position: relative;
+      background: #3b82f6;
+      color: white;
+      padding: 0.6rem 1.25rem;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    button.csp-button:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    button.csp-button:hover:not(:disabled) {
+      background: #2563eb;
+    }
+
+    .csp-spinner {
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid #e5e7eb;
+      border-top-color: #3b82f6;
+      border-radius: 50%;
+      animation: csp-spin 1s linear infinite;
+    }
+
+    @keyframes csp-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    #csp-toggleSessions {
+      margin-bottom: 1rem;
+      background: transparent;
+      color: #3b82f6;
+      padding: 0;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    table.csp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      max-width: none;
+    }
+
+    th.csp-th, td.csp-td {
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    tr.csp-timeslot > th.csp-th {
+      background: #f3f4f6;
+      font-size: 1rem;
+      font-weight: 700;
+      width: 160px;
+    }
+
+    .csp-session {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.25rem 0;
+    }
+
+    .csp-session input[type="checkbox"] {
+      margin-top: 4px;
+      accent-color: #3b82f6;
+      cursor: pointer;
+    }
+
+    .csp-session-details {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .csp-session-title {
+      font-weight: 600;
+    }
+
+    .csp-detailsBtn {
+      background: #10b981;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.85rem;
+      border-radius: 0.375rem;
+      border: none;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .csp-detailsBtn:hover {
+      background: #059669;
+    }
+
+    #csp-response {
+      background: #f3f4f6;
+      border-radius: 0.375rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      max-width: 640px;
+    }
+
+    /* Modal styles */
+    .csp-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .csp-modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 1rem;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 0.375rem;
+    }
+    .csp-modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .csp-modal-close:hover,
+    .csp-modal-close:focus {
+      color: #000;
+      text-decoration: none;
+    }
+  </style>
+  <!-- Marked.js for Markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- API Key separate, not sticky -->
+  <div id="csp-apiKeyContainer">
+    <label class="csp-label">
+      OpenAI API Key
+      <input id="csp-apiKey" class="csp-input" type="password" placeholder="sk-..." />
+    </label>
+  </div>
+
+  <!-- Only prompt and button are sticky -->
+  <section id="csp-stickyControls">
+    <label class="csp-label">
+      Your Prompt
+      <textarea id="csp-prompt" class="csp-textarea" rows="3">help me decide between these sessions</textarea>
+    </label>
+
+    <button id="csp-askBtn" class="csp-button" disabled>
+      Ask ChatGPT
+      <span id="csp-spinner" class="csp-spinner" hidden></span>
+    </button>
+  </section>
+
+  <button id="csp-toggleSessions" class="csp-button">Hide Sessions</button>
+  <div id="csp-sessionsContainer">
+    <table id="csp-sessionTable" class="csp-table"></table>
+  </div>
+
+  <div id="csp-response" class="csp-response" hidden></div>
+
+  <!-- Modal for session details -->
+  <div id="csp-modal" class="csp-modal">
+    <div class="csp-modal-content">
+      <span id="csp-modalClose" class="csp-modal-close">&times;</span>
+      <h2 id="csp-modalTitle"></h2>
+      <p id="csp-modalSpeakers"></p>
+      <p id="csp-modalDescription"></p>
+    </div>
+  </div>
+
+  <script>
+    // --- CONFIG ---
+    const csp_SESSIONS_URL = "https://sessionize.com/api/v2/w3hd2z8a/view/All";
+    const csp_DETAILS_URL = "https://www.ai.engineer/sessions-speakers-details.json";
+
+    // --- State ---
+    let csp_sessions = [];
+    let csp_speakers = new Map();
+
+    // --- Helpers ---
+    function csp_formatTime(iso) {
+      const d = new Date(iso);
+      return d.toLocaleString([], {
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    }
+
+    function csp_groupBy(array, keyFn) {
+      return array.reduce((acc, item) => {
+        const key = keyFn(item);
+        (acc[key] = acc[key] || []).push(item);
+        return acc;
+      }, {});
+    }
+
+    function csp_render() {
+      const table = document.getElementById("csp-sessionTable");
+      table.innerHTML = "";
+
+      // Sort sessions by start time
+      csp_sessions.sort((a, b) => new Date(a.startsAt) - new Date(b.startsAt));
+
+      const grouped = csp_groupBy(csp_sessions, (s) => s.startsAt);
+
+      for (const [start, list] of Object.entries(grouped)) {
+        const tr = document.createElement("tr");
+        tr.classList.add("csp-timeslot");
+        const th = document.createElement("th");
+        th.classList.add("csp-th");
+        th.textContent = `${csp_formatTime(start)}`;
+        tr.appendChild(th);
+
+        const td = document.createElement("td");
+        td.classList.add("csp-td");
+        list.forEach((s) => {
+          const div = document.createElement("div");
+          div.className = "csp-session";
+
+          const cb = document.createElement("input");
+          cb.type = "checkbox";
+          cb.dataset.id = s.id;
+
+          const detailsDiv = document.createElement("div");
+          detailsDiv.className = "csp-session-details";
+          detailsDiv.innerHTML = `
+            <div class="csp-session-title">${s.title}</div>
+            <div class="csp-session-speakers">${s.speakerNames.join(", ")}</div>
+          `;
+          // Toggle checkbox when clicking on details text
+          detailsDiv.addEventListener("click", () => {
+            cb.checked = !cb.checked;
+          });
+
+          const detailsBtn = document.createElement("button");
+          detailsBtn.className = "csp-detailsBtn";
+          detailsBtn.textContent = "Details";
+          detailsBtn.dataset.id = s.id;
+          detailsBtn.addEventListener("click", () => csp_showModal(s.id));
+
+          div.appendChild(cb);
+          div.appendChild(detailsDiv);
+          div.appendChild(detailsBtn);
+          td.appendChild(div);
+        });
+        tr.appendChild(td);
+        table.appendChild(tr);
+      }
+    }
+
+    async function csp_loadData() {
+      const askBtn = document.getElementById("csp-askBtn");
+      const spinner = document.getElementById("csp-spinner");
+      // Show spinner and keep button disabled
+      askBtn.disabled = true;
+      spinner.hidden = false;
+
+      try {
+        const [data1, data2] = await Promise.all([
+          fetch(csp_SESSIONS_URL).then((r) => r.json()),
+          fetch(csp_DETAILS_URL).then((r) => r.json()).catch(() => ({})),
+        ]);
+
+        // Build speaker map from first file
+        if (Array.isArray(data1.speakers)) {
+          data1.speakers.forEach((sp) => {
+            csp_speakers.set(sp.id, sp.fullName || `${sp.firstName} ${sp.lastName}`);
+          });
+        }
+
+        // Merge sessions (prefer detailed description from second URL)
+        const sessionsById = new Map();
+        if (Array.isArray(data1.sessions)) {
+          data1.sessions.forEach((s) => sessionsById.set(String(s.id), s));
+        }
+        if (Array.isArray(data2)) {
+          data2.forEach((s) => {
+            const existing = sessionsById.get(String(s["Session ID"]));
+            if (existing) {
+              existing.description = s.Description || existing.description;
+            }
+          });
+        }
+
+        csp_sessions = Array.from(sessionsById.values()).map((s) => ({
+          id: s.id,
+          title: s.title || s.Title,
+          description: s.description || s.Description || "",
+          startsAt: s.startsAt || s["Scheduled At"],
+          speakerIds: s.speakers || [],
+          speakerNames: (s.speakers || []).map((id) => csp_speakers.get(id) || id),
+        }));
+
+        csp_render();
+      } catch (err) {
+        alert(`Error loading sessions: ${err.message}`);
+      } finally {
+        // Hide spinner, enable ask button once data is loaded or on error
+        spinner.hidden = true;
+        document.getElementById("csp-askBtn").disabled = false;
+      }
+    }
+
+    function csp_showModal(sessionId) {
+      const session = csp_sessions.find((s) => s.id == sessionId);
+      if (!session) return;
+      document.getElementById("csp-modalTitle").textContent = session.title;
+      document.getElementById("csp-modalSpeakers").textContent = 'Speakers: ' + session.speakerNames.join(', ');
+      document.getElementById("csp-modalDescription").textContent = session.description;
+      document.getElementById("csp-modal").style.display = "block";
+    }
+
+    function csp_hideModal() {
+      document.getElementById("csp-modal").style.display = "none";
+    }
+
+    async function csp_callChatGPT(prompt, talks, apiKey) {
+      const message = [prompt.trim(), "\n\n", ...talks.map((t) => `${t.title}: ${t.description}`)].join("\n\n");
+
+      const res = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini",
+          messages: [{ role: "user", content: message }],
+        }),
+      });
+
+      if (!res.ok) throw new Error(`OpenAI error: ${res.status}`);
+      const data = await res.json();
+      return data.choices?.[0]?.message?.content?.trim() || "(No response)";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const apiInput = document.getElementById("csp-apiKey");
+      // Load from localStorage if available
+      const savedKey = localStorage.getItem("openai_key");
+      if (savedKey) apiInput.value = savedKey;
+
+      // Save to localStorage on change
+      apiInput.addEventListener("input", () => {
+        localStorage.setItem("openai_key", apiInput.value.trim());
+      });
+
+      const askBtn = document.getElementById("csp-askBtn");
+      const spinner = document.getElementById("csp-spinner");
+      const sessionsContainer = document.getElementById("csp-sessionsContainer");
+      const toggleBtn = document.getElementById("csp-toggleSessions");
+      const modal = document.getElementById("csp-modal");
+      const modalClose = document.getElementById("csp-modalClose");
+
+      // Toggle sessions visibility
+      toggleBtn.addEventListener("click", () => {
+        const hidden = sessionsContainer.hidden;
+        sessionsContainer.hidden = !hidden;
+        toggleBtn.textContent = hidden ? "Hide Sessions" : "Show Sessions";
+      });
+
+      // Close modal
+      modalClose.addEventListener("click", csp_hideModal);
+      window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          csp_hideModal();
+        }
+      });
+
+      askBtn.addEventListener("click", async () => {
+        const apiKey = apiInput.value.trim();
+        if (!apiKey) {
+          alert("Please enter your OpenAI API key.");
+          return;
+        }
+
+        // Save key just before sending
+        localStorage.setItem("openai_key", apiKey);
+
+        const prompt = document.getElementById("csp-prompt").value;
+        const checked = Array.from(document.querySelectorAll(".csp-session input[type=checkbox]:checked"));
+        if (checked.length === 0) {
+          alert("Please pick at least one session.");
+          return;
+        }
+        const selected = csp_sessions.filter((s) => checked.some((cb) => cb.dataset.id == s.id));
+
+        // Hide sessions, update toggle text
+        sessionsContainer.hidden = true;
+        toggleBtn.textContent = "Show Sessions";
+
+        // Disable button & show spinner during ChatGPT call
+        askBtn.disabled = true;
+        spinner.hidden = false;
+
+        try {
+          const reply = await csp_callChatGPT(prompt, selected, apiKey);
+          const respDiv = document.getElementById("csp-response");
+          respDiv.hidden = false;
+          // Render markdown to HTML
+          respDiv.innerHTML = marked.parse(reply);
+          window.scrollTo({ top: respDiv.offsetTop, behavior: "smooth" });
+        } catch (err) {
+          alert(err.message);
+        } finally {
+          askBtn.disabled = false;
+          spinner.hidden = true;
+        }
+      });
+
+      // Initial load
+      csp_loadData();
+    });
+  </script>
+]]></content:encoded>
+</item>
 <item>
 <title>If you’re not using AI 20 times a day, you might be doing your job wrong.</title>
 <link/>https://spreadsheets-are-all-you-need.ai/if-youre-not-using-ai-20-times-a-day-you-might-be-doing-your-job-wrong/
@@ -18,7 +509,7 @@
 <pubdate>Fri, 09 May 2025 19:36:42 +0000</pubdate>
 <category><![CDATA[Uncategorized]]></category>
 <guid ispermalink="false">https://spreadsheets-are-all-you-need.ai/?p=1562</guid>
-<description><![CDATA[A year ago, I half jokingly proposed that “If you&#8217;re not using AI 20 times a day, you&#8217;re probably doing your job wrong.” In multiple instances over the past month, ...]]></description>
+<description><![CDATA[A year ago, I half jokingly proposed that “If you're not using AI 20 times a day, you're probably doing your job wrong.” In multiple instances over the past month, ...]]></description>
 <content:encoded><![CDATA[
 <figure class="wp-block-embed is-provider-youtube wp-block-embed-youtube"><div class="wp-block-embed__wrapper">
 <iframe title="If you&#039;re not using AI 20 times a day, you might be doing your job wrong." width="800" height="450" src="https://www.youtube.com/embed/5cL6j650m-Y?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -26,11 +517,11 @@
 
 
 
-<p>A year ago, I half jokingly proposed that <em><a href="https://x.com/ianand/status/1783741240657477650">“If you&#8217;re not using AI 20 times a day, you&#8217;re probably doing your job wrong.”</a></em></p>
+<p>A year ago, I half jokingly proposed that <em><a href="https://x.com/ianand/status/1783741240657477650">“If you're not using AI 20 times a day, you're probably doing your job wrong.”</a></em></p>
 
 
 
-<p>In multiple instances over the past month, we&#8217;ve seen that prediction become official corporate policy.</p>
+<p>In multiple instances over the past month, we've seen that prediction become official corporate policy.</p>
 
 
 
@@ -58,7 +549,7 @@
 
 
 
-<p>This is the easiest upgrade. Change your browser’s default search box to a chatbot. The search box is ideal because it latches onto a habit you already have. And it assuages data concerns: if you&#8217;re willing to type data into a search engine, it&#8217;s probably safe to type into an AI search tool as well.</p>
+<p>This is the easiest upgrade. Change your browser’s default search box to a chatbot. The search box is ideal because it latches onto a habit you already have. And it assuages data concerns: if you're willing to type data into a search engine, it's probably safe to type into an AI search tool as well.</p>
 
 
 
@@ -70,7 +561,7 @@
 
 
 
-<p>I’m currently researching how teams are upskilling for AI: What skills are missing? Which tools matter most? If you&#8217;re navigating this shift individually or inside your organization, I’d love to hear what you’re learning. Please reach out.</p>
+<p>I’m currently researching how teams are upskilling for AI: What skills are missing? Which tools matter most? If you're navigating this shift individually or inside your organization, I’d love to hear what you’re learning. Please reach out.</p>
 ]]></content:encoded>
 </item>
 <item>
@@ -81,7 +572,7 @@
 <pubdate>Tue, 06 May 2025 23:03:34 +0000</pubdate>
 <category><![CDATA[Uncategorized]]></category>
 <guid ispermalink="false">https://spreadsheets-are-all-you-need.ai/?p=1554</guid>
-<description><![CDATA[You&#8217;ve probably encountered the headlines of companies struggling to see financial returns from their AI investments or executives cancelling AI rollouts due to disappointing ROI, and skepticism around AI&#8217;s value ...]]></description>
+<description><![CDATA[You've probably encountered the headlines of companies struggling to see financial returns from their AI investments or executives cancelling AI rollouts due to disappointing ROI, and skepticism around AI's value ...]]></description>
 <content:encoded><![CDATA[
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
 <iframe title="Why AI&#039;s ROI is Hiding In Plain Sight" width="800" height="450" src="https://www.youtube.com/embed/u5_X4DVHRck?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -95,7 +586,7 @@
 
 
 
-<p>You&#8217;ve probably encountered the headlines of <a href="https://www.wsj.com/articles/companies-are-struggling-to-drive-a-return-on-ai-it-doesnt-have-to-be-that-way-f3d697aa">companies struggling to see financial returns</a> from their AI investments or  <a href="https://www.ciocoverage.com/pharma-company-drops-microsoft-copilot-ai-due-to-high-costs-and-limited-value-sparking-industry-concerns/">executives cancelling AI rollouts due to disappointing ROI</a>, and skepticism around AI&#8217;s value in the enterprise. Yet, paradoxically, if you&#8217;ve personally used AI tools, you&#8217;ve likely felt their value. Why is there this disconnect?</p>
+<p>You've probably encountered the headlines of <a href="https://www.wsj.com/articles/companies-are-struggling-to-drive-a-return-on-ai-it-doesnt-have-to-be-that-way-f3d697aa">companies struggling to see financial returns</a> from their AI investments or  <a href="https://www.ciocoverage.com/pharma-company-drops-microsoft-copilot-ai-due-to-high-costs-and-limited-value-sparking-industry-concerns/">executives cancelling AI rollouts due to disappointing ROI</a>, and skepticism around AI's value in the enterprise. Yet, paradoxically, if you've personally used AI tools, you've likely felt their value. Why is there this disconnect?</p>
 
 
 
@@ -121,15 +612,15 @@
 
 
 
-<p>Collectively, the company&#8217;s competencies are strong across product, engineering, and marketing because each employee excels in their specialty. But what happens when we introduce AI?</p>
+<p>Collectively, the company's competencies are strong across product, engineering, and marketing because each employee excels in their specialty. But what happens when we introduce AI?</p>
 
 
 
-<p><a href="https://hai.stanford.edu/news/will-generative-ai-make-you-more-productive-work-yes-only-if-youre-not-already-great-your-job">Research</a> shows that <a href="https://mitsloan.mit.edu/ideas-made-to-matter/workers-less-experience-gain-most-generative-ai#:~:text=%E2%80%9CGenerative%20AI%20seems%20to%20be,they%20can%20get%20better%20faster.%E2%80%9D">AI disproportionately boosts the productivity of non-experts</a>, transforming them into &#8220;quasi-experts&#8221;. In our hypothetical company, that means Alice, Bob, and Eve each become significantly better in areas outside their core expertise. For example, Alice can now handle engineering tasks reasonably well, Bob becomes decent at marketing, and Eve can engage effectively with product tasks. </p>
+<p><a href="https://hai.stanford.edu/news/will-generative-ai-make-you-more-productive-work-yes-only-if-youre-not-already-great-your-job">Research</a> shows that <a href="https://mitsloan.mit.edu/ideas-made-to-matter/workers-less-experience-gain-most-generative-ai#:~:text=%E2%80%9CGenerative%20AI%20seems%20to%20be,they%20can%20get%20better%20faster.%E2%80%9D">AI disproportionately boosts the productivity of non-experts</a>, transforming them into "quasi-experts". In our hypothetical company, that means Alice, Bob, and Eve each become significantly better in areas outside their core expertise. For example, Alice can now handle engineering tasks reasonably well, Bob becomes decent at marketing, and Eve can engage effectively with product tasks. </p>
 
 
 
-<p>Individually, this represents massive gains in versatility but most organizations are structured by speciality. Alice&#8217;s newfound engineering skill or Bob&#8217;s marketing insight is lost if their roles and workflows remain rigidly segmented. The gains in individual productivity may not translate to organizational ROI without changes to the company&#8217;s structure.</p>
+<p>Individually, this represents massive gains in versatility but most organizations are structured by speciality. Alice's newfound engineering skill or Bob's marketing insight is lost if their roles and workflows remain rigidly segmented. The gains in individual productivity may not translate to organizational ROI without changes to the company's structure.</p>
 
 
 
@@ -137,7 +628,7 @@
 
 
 
-<p>This scenario mirrors past historical technology transitions. For example, in transition from steam power to electricity, it took factories nearly 50 years to recognize the productivity gains. It took decades before factory owners realized they needed to reorganize completely, breaking away from centralized power sources of steam-power and redesign their workflows to fully leverage electricity&#8217;s potential.</p>
+<p>This scenario mirrors past historical technology transitions. For example, in transition from steam power to electricity, it took factories nearly 50 years to recognize the productivity gains. It took decades before factory owners realized they needed to reorganize completely, breaking away from centralized power sources of steam-power and redesign their workflows to fully leverage electricity's potential.</p>
 
 
 
@@ -149,19 +640,19 @@
 
 
 
-<p><a href="https://www.microsoft.com/en-us/worklab/work-trend-index">Microsoft’s 2025 Work Trend Index</a> provides a glimpse into this future, introducing the concept of &#8220;Frontier Firms,&#8221; organizations where humans initially leverage AI assistants but eventually lead autonomous teams of AI agents. </p>
+<p><a href="https://www.microsoft.com/en-us/worklab/work-trend-index">Microsoft’s 2025 Work Trend Index</a> provides a glimpse into this future, introducing the concept of "Frontier Firms," organizations where humans initially leverage AI assistants but eventually lead autonomous teams of AI agents. </p>
 
 
 
-<p>The startup Oleve is an illustrative example. <a href="https://www.youtube.com/watch?v=aDiEQngFsFU">As discussed on the Latent Space podcast</a>, this small company is generating outsized recurring revenue by empowering &#8220;product engineers&#8221; who blend multiple skillsets and enabling by AI agents to tackle tasks from product discovery to marketing.</p>
+<p>The startup Oleve is an illustrative example. <a href="https://www.youtube.com/watch?v=aDiEQngFsFU">As discussed on the Latent Space podcast</a>, this small company is generating outsized recurring revenue by empowering "product engineers" who blend multiple skillsets and enabling by AI agents to tackle tasks from product discovery to marketing.</p>
 
 
 
-<p>AI has the potential to redefine <a href="https://platforms.substack.com/p/the-many-fallacies-of-ai-wont-take">your organization, your market and even the problem you&#8217;re solving for your customers</a>.</p>
+<p>AI has the potential to redefine <a href="https://platforms.substack.com/p/the-many-fallacies-of-ai-wont-take">your organization, your market and even the problem you're solving for your customers</a>.</p>
 
 
 
-<p>For organizations seeking meaningful ROI from AI, the question isn&#8217;t merely &#8220;How can AI speed up our existing processes?&#8221; Instead, leaders should ask, &#8220;How must our processes evolve because of AI?&#8221;</p>
+<p>For organizations seeking meaningful ROI from AI, the question isn't merely "How can AI speed up our existing processes?" Instead, leaders should ask, "How must our processes evolve because of AI?"</p>
 
 
 
@@ -173,7 +664,7 @@
 
 
 
-<p><a href="https://platforms.substack.com/p/the-many-fallacies-of-ai-wont-take">The many fallacies of &#8216;AI won&#8217;t take your job, but someone using AI will&#8217;</a></p>
+<p><a href="https://platforms.substack.com/p/the-many-fallacies-of-ai-wont-take">The many fallacies of 'AI won't take your job, but someone using AI will'</a></p>
 ]]></content:encoded>
 </item>
 <item>

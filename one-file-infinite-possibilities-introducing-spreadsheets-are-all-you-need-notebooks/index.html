@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="http://gmpg.org/xfn/11" rel="profile"/>
-<title>Neural network fit demo – Spreadsheets are all you need.ai</title>
+<title>One file, Infinite possibilities: Introducing Spreadsheets-are-all-you-need Notebooks – Spreadsheets are all you need.ai</title>
 <meta content="max-image-preview:large" name="robots">
 <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 <link href="//fonts.googleapis.com" rel="dns-prefetch">
@@ -44,8 +44,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 <link href="https://spreadsheets-are-all-you-need.ai/wp-content/themes/onepress/assets/css/lightgallery.css" id="onepress-gallery-lightgallery-css" media="all" rel="stylesheet" type="text/css"/>
 <script id="jquery-core-js" src="https://spreadsheets-are-all-you-need.ai/wp-includes/js/jquery/jquery.min.js" type="text/javascript"></script>
 <script id="jquery-migrate-js" src="https://spreadsheets-are-all-you-need.ai/wp-includes/js/jquery/jquery-migrate.min.js" type="text/javascript"></script>
-<link href="https://spreadsheets-are-all-you-need.ai/wp-json/" rel="https://api.w.org/"/><link href="https://spreadsheets-are-all-you-need.ai/wp-json/wp/v2/pages/277" rel="alternate" title="JSON" type="application/json"/>
-<link href="https://spreadsheets-are-all-you-need.ai/neural-network-fit-demo/" rel="canonical"/>
+<link href="https://spreadsheets-are-all-you-need.ai/wp-json/" rel="https://api.w.org/"/><link href="https://spreadsheets-are-all-you-need.ai/wp-json/wp/v2/posts/1716" rel="alternate" title="JSON" type="application/json"/>
+<link href="https://spreadsheets-are-all-you-need.ai/one-file-infinite-possibilities-introducing-spreadsheets-are-all-you-need-notebooks/" rel="canonical"/>
 
 
 
@@ -58,7 +58,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
     }
 }		</style>
 </link></meta></head>
-<body class="wp-singular page-template-default page page-id-277 wp-theme-onepress">
+<body class="wp-singular post-template-default single single-post postid-1716 single-format-standard wp-theme-onepress">
 <div class="hfeed site" id="page">
 <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 <div class="h-on-top no-transparent" id="header-section"> <header class="site-header header-contained is-sticky no-scroll no-t h-on-top" id="masthead" role="banner">
@@ -80,355 +80,37 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 </div>
 </div>
 </header>
-</div> <div class="page-header">
-<div class="container">
-<h1 class="entry-title">Neural network fit demo</h1> </div>
 </div>
 <div class="site-content" id="content">
 <div class="container no-sidebar" id="content-inside">
 <div class="content-area" id="primary">
 <main class="site-main" id="main" role="main">
-<article class="post-277 page type-page status-publish hentry" id="post-277">
+<article class="post-1716 post type-post status-publish format-standard hentry category-uncategorized" id="post-1716">
 <header class="entry-header">
-</header>
+<h1 class="entry-title">One file, Infinite possibilities: Introducing Spreadsheets-are-all-you-need Notebooks</h1> </header>
 <div class="entry-content">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<style>
-        p.site-title {
-         white-space: nowrap;
-}
-        :root {
-           --wp--style--global--content-size: 1024px;
-}
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 20px;
-        }
-        .network-container {
-            position: relative;
-            height: 600px;
-            background: #f5f5f5;
-            border-radius: 8px;
-            padding: 20px;
-        }
-        .node {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #fff;
-            border: 2px solid #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        .node-controls {
-            position: absolute;
-            width: 100px;
-        }
-        .slider-container {
-            margin-bottom: 10px;
-        }
-        .slider-container label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-        }
-        input[type="range"] {
-            width: 100%;
-        }
-        .value-display {
-            font-size: 0.8em;
-            color: #666;
-        }
-        #chart {
-            width: 600px;
-            height: 600px;
-        }
-        .line {
-            fill: none;
-            stroke-width: 2;
-        }
-        .target-line {
-            stroke: #8884d8;
-        }
-        .prediction-line {
-            stroke: #82ca9d;
-        }
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 10px 0;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .legend-color {
-            width: 20px;
-            height: 3px;
-        }
-        .connection {
-            position: absolute;
-            background: #333;
-            height: 2px;
-            transform-origin: left center;
-        }
-        .header {
-            margin-bottom: 20px;
-        }
-        /* Neural network layout coordinates */
-        #input-node { left: 30px; top: 270px; }
-        #hidden1-node { left: 170px; top: 170px; }
-        #hidden2-node { left: 170px; top: 370px; }
-        #output-node { left: 310px; top: 270px; }
-        
-        /* Control panel positions */
-        #input-hidden1-controls { left: 80px; top: 50px; }
-        #input-hidden2-controls { left: 80px; top: 420px; }
-        #hidden1-output-controls { left: 280px; top: 190px; }
-        #hidden2-output-controls { left: 280px; top: 350px; }
-        #output-bias-controls { left: 280px; top: 440px; }
-
-        /* Ensure nodes appear above connections */
-        .connection { z-index: 1; }
-        .node { z-index: 2; position: absolute; }
-    </style>
-<div class="header">
-<h1>Neural Network Parabola Fitting</h1>
-<p>Try to fit y = 5(x-1)² + 1 using a neural network with ReLU activation</p>
-<p>Mean Squared Error: <span id="mse">0</span></p>
-</div>
-<div class="container">
-<div class="network-container">
-<!-- Nodes -->
-<div class="node" id="input-node">Input</div>
-<div class="node" id="hidden1-node">H1</div>
-<div class="node" id="hidden2-node">H2</div>
-<div class="node" id="output-node">Out</div>
-<!-- Connections (visual lines) will be drawn with JavaScript -->
-<!-- Input to Hidden1 controls -->
-<div class="node-controls" id="input-hidden1-controls">
-<div class="slider-container">
-<label for="w1">Weight 1:</label>
-<input id="w1" max="5" min="-5" step="0.1" type="range" value="-3.265962584"/>
-<span class="value-display" id="w1-value">-3.265962584</span>
-</div>
-<div class="slider-container">
-<label for="b1">Bias 1:</label>
-<input id="b1" max="5" min="-5" step="0.1" type="range" value="2.406892744"/>
-<span class="value-display" id="b1-value">2.406892744</span>
-</div>
-</div>
-<!-- Input to Hidden2 controls -->
-<div class="node-controls" id="input-hidden2-controls">
-<div class="slider-container">
-<label for="w2">Weight 2:</label>
-<input id="w2" max="5" min="-5" step="0.1" type="range" value="1.377903003"/>
-<span class="value-display" id="w2-value">1.377903003</span>
-</div>
-<div class="slider-container">
-<label for="b2">Bias 2:</label>
-<input id="b2" max="5" min="-5" step="0.1" type="range" value="-1.721939364"/>
-<span class="value-display" id="b2-value">-1.721939364</span>
-</div>
-</div>
-<!-- Hidden1 to Output controls -->
-<div class="node-controls" id="hidden1-output-controls">
-<div class="slider-container">
-<label for="w3">Weight 3:</label>
-<input id="w3" max="5" min="-5" step="0.1" type="range" value="3.559152855"/>
-<span class="value-display" id="w3-value">3.559152855</span>
-</div>
-</div>
-<!-- Hidden2 to Output controls -->
-<div class="node-controls" id="hidden2-output-controls">
-<div class="slider-container">
-<label for="w4">Weight 4:</label>
-<input id="w4" max="5" min="-5" step="0.1" type="range" value="4.760435386"/>
-<span class="value-display" id="w4-value">4.760435386</span>
-</div>
-</div>
-<!-- Output bias control -->
-<div class="node-controls" id="output-bias-controls">
-<div class="slider-container">
-<label for="b3">Output Bias:</label>
-<input id="b3" max="5" min="-5" step="0.1" type="range" value="0.8591528551"/>
-<span class="value-display" id="b3-value">0.8591528551</span>
-</div>
-</div>
-</div>
-<div>
-<div class="legend">
-<div class="legend-item">
-<div class="legend-color" style="background: #8884d8;"></div>
-<span>Target Parabola</span>
-</div>
-<div class="legend-item">
-<div class="legend-color" style="background: #82ca9d;"></div>
-<span>Neural Network Output</span>
-</div>
-</div>
-<div id="chart"></div>
-</div>
-</div>
-<script>
-        // Draw connection lines between nodes
-        function drawConnections() {
-            const connections = [
-                { from: 'input-node', to: 'hidden1-node' },
-                { from: 'input-node', to: 'hidden2-node' },
-                { from: 'hidden1-node', to: 'output-node' },
-                { from: 'hidden2-node', to: 'output-node' }
-            ];
-
-            connections.forEach(conn => {
-                const from = document.getElementById(conn.from).getBoundingClientRect();
-                const to = document.getElementById(conn.to).getBoundingClientRect();
-                const container = document.querySelector('.network-container').getBoundingClientRect();
-
-                const dx = (to.left - from.left);
-                const dy = (to.top - from.top);
-                const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-                const length = Math.sqrt(dx * dx + dy * dy);
-
-                const line = document.createElement('div');
-                line.className = 'connection';
-                line.style.width = `${length}px`;
-                line.style.transform = `rotate(${angle}deg)`;
-                line.style.left = `${from.left - container.left + 30}px`;
-                line.style.top = `${from.top - container.top + 30}px`;
-
-                document.querySelector('.network-container').appendChild(line);
-            });
-        }
-
-        // Neural network parameters
-        let params = {
-            w1: -3.265962584,
-            w2: 1.377903003,
-            b1: 2.406892744,
-            b2: -1.721939364,
-            w3: 3.559152855,
-            w4: 4.760435386,
-            b3: 0.8591528551
-        };
-
-        // ReLU activation function
-        const relu = x => Math.max(0, x);
-
-        // Forward pass through the network
-        function forwardPass(x) {
-            const hidden1 = relu(params.w1 * x + params.b1);
-            const hidden2 = relu(params.w2 * x + params.b2);
-            return params.w3 * hidden1 + params.w4 * hidden2 + params.b3;
-        }
-
-        // Generate data points
-        function generateData() {
-            const data = [];
-            for (let x = 0; x <= 2; x += 0.05) {
-                const target = 5 * Math.pow(x - 1, 2) + 1;
-                const prediction = forwardPass(x);
-                data.push({ x, target, prediction });
-            }
-            return data;
-        }
-
-        // Calculate MSE
-        function calculateMSE(data) {
-            return (data.reduce((sum, point) => 
-                sum + Math.pow(point.target - point.prediction, 2), 0) / data.length).toFixed(4);
-        }
-
-        // Set up D3 chart
-        const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-        const width = 700 - margin.left - margin.right;
-        const height = 600 - margin.top - margin.bottom;
-
-        const svg = d3.select("#chart")
-            .append("svg")
-            .attr("width", "100%")
-            .attr("height", "100%")
-            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-            .append("g")
-            .attr("transform", `translate(${margin.left},${margin.top})`);
-
-        const x = d3.scaleLinear()
-            .domain([0, 2])
-            .range([0, width]);
-
-        const y = d3.scaleLinear()
-            .domain([-1, 21])
-            .range([height, 0]);
-
-        // Add X axis
-        svg.append("g")
-            .attr("transform", `translate(0,${height})`)
-            .call(d3.axisBottom(x));
-
-        // Add Y axis
-        svg.append("g")
-            .call(d3.axisLeft(y));
-
-        // Line generators
-        const targetLine = d3.line()
-            .x(d => x(d.x))
-            .y(d => y(d.target));
-
-        const predictionLine = d3.line()
-            .x(d => x(d.x))
-            .y(d => y(d.prediction));
-
-        // Add the lines
-        const targetPath = svg.append("path")
-            .attr("class", "line target-line");
-
-        const predictionPath = svg.append("path")
-            .attr("class", "line prediction-line");
-
-        // Update function
-        function updateChart() {
-            const data = generateData();
-            
-            targetPath.datum(data)
-                .attr("d", targetLine);
-            
-            predictionPath.datum(data)
-                .attr("d", predictionLine);
-
-            document.getElementById('mse').textContent = calculateMSE(data);
-        }
-
-        // Add event listeners to sliders
-        const sliders = ['w1', 'w2', 'b1', 'b2', 'w3', 'w4', 'b3'];
-        sliders.forEach(id => {
-            const slider = document.getElementById(id);
-            const valueDisplay = document.getElementById(`${id}-value`);
-            
-            slider.addEventListener('input', (e) => {
-                params[id] = parseFloat(e.target.value);
-                valueDisplay.textContent = e.target.value;
-                updateChart();
-            });
-        });
-
-        // Draw connections when the page loads
-        window.addEventListener('load', drawConnections);
-
-        // Initial render
-        updateChart();
-    </script>
+<p>Imagine a spreadsheet that generates formulas with AI, is easily extendable with HTML &amp; JavaScript, debuggable right in your browser, and sharable instantly with anyone, no installation required.</p>
+<p>Welcome to <strong>Spreadsheets-are-all-you-need Notebooks</strong>. They’re what happens when a spreadsheet and a python notebook have an AI powered baby in browser land.</p>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="450" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8bl3ywYkOrE?feature=oembed" title="One file, Infinite possibilities: Introducing Spreadsheets-are-all-you-need Notebooks" width="800"></iframe>
+</div></figure>
+<h3 class="wp-block-heading"><strong>A self-propagating, runnable HTML fIle</strong></h3>
+<p>A Spreadsheets-are-all-you-need Notebook is a runnable HTML file. That’s right. You can send this file to anyone, they double-click it, and it runs. No local server, no software installation, no headaches. Recipients can adjust and modify the notebook, hit the export button, and get a new version with their changes. It’s like a file format that includes its own application code.</p>
+<h3 class="wp-block-heading"><strong>Step-based organization</strong></h3>
+<p>Instead formulas, a Spreadsheets-are-all-you-need Notebook processes data in JavaScript. Notebooks consist of “steps” (similar to a Jupyter cell) containing data tables and code that you can create, delete, or rearrange.  When you tap “run all steps,” embedded JavaScript in each step calculates the results.</p>
+<h3 class="wp-block-heading"><strong>The exact “formula” you need, on demand</strong></h3>
+<p>But you don’t write JavaScript; you simply describe what you want in natural language. The system uses AI to generate the code for you. For example, you can prompt: “Create a table from the product_orders[] that matches the format of revenue_by_product[]”. The brackets tell the system you’re referencing a table in the notebook, and it automatically passes table information like column names to the AI.</p>
+<p>By placing prompting front and center, you can “vibe code” your notebook to use precisely the “formulas” you need for your task. No more, no less.</p>
+<h3 class="wp-block-heading"><strong>Zero-Dependency Sharing</strong></h3>
+<p>Once you’ve finalized your workflow, colleagues can run it on their data without needing AI tokens or API keys. All data processing is self-contained in the notebook file itself. Simply pass in a CSV with your data, and get instant results.</p>
+<h3 class="wp-block-heading"><strong>Easy to extend</strong></h3>
+<p>Because it’s just a web page, extending functionality is straightforward. Want to add interactive controls? Simply embed HTML elements. API Integration? Call any API that supports CORS or JSONP directly from your notebook. </p>
+<h3 class="wp-block-heading"><strong>Built-in Debugging</strong></h3>
+<p>When was the last time you struggled with a spreadsheet issue and wished it had a debugger? Open your browser DevTools/Inspector and type console or debugger commands to debug your data processing using familiar browser dev tools without ever leaving your browser.</p>
+<h2 class="wp-block-heading"><strong>Give it a whirl</strong></h2>
+<p>Visit<a href="https://spreadsheets-are-all-you-need.com/notebooks"> Spreadsheets-are-all-you-need/notebooks</a> to build your own notebook.</p>
+<p>Have an existing spreadsheet or workflow you’d like to convert? Reach out! Join the <a href="https://discord.gg/b66stSz87E">Discord server</a> and visit the #notebooks room or file an issue on <a href="https://github.com/ianand/spreadsheets-are-all-you-need">Github</a>. Thanks!</p>
+<p></p>
 </div>
 </article>
 </main>

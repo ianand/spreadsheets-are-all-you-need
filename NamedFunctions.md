@@ -1,4 +1,4 @@
-This file lists out the named functions used in Spreadsheets-are-all-you-need.
+This file lists out the named functions used in Spreadsheets-are-all-you-need Excel file to implement OpenAI's GPT-2 model.
 
 
 

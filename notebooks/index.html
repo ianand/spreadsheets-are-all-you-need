@@ -172,10 +172,12 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
           // Try to get API key from localStorage
           let apiKey = localStorage.getItem(openaiApiKeyName) || '';
           
-          // Try to get from input field
-          const apiKeyInputElement = document.getElementById('openai-key-input');
-          if (!apiKey && apiKeyInputElement) {
-            apiKey = apiKeyInputElement.value;
+          // Try to get api key from the input field via saayn-header web component
+          if (!apiKey) {
+            const saaynHeader = document.querySelector('saayn-header');
+            if (saaynHeader && saaynHeader.getApiKey) {
+              apiKey = saaynHeader.getApiKey();
+            }
           }
           
           if(apiKey) {
@@ -690,7 +692,15 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
     
           // Get the response
           const responseJson = await response.json();
-          result = responseJson?.output[0]?.content[0]?.text;
+          
+          // Check for API errors
+          if (responseJson.error) {
+            result = `API Error: ${responseJson.error.message || 'Unknown error'}`;
+          } else if (!response.ok) {
+            result = `HTTP Error: ${response.status} ${response.statusText}`;
+          } else {
+            result = responseJson?.output[0]?.content[0]?.text;
+          }
     
         } catch (err) {
           console.error('Fetch error:', err);

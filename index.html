@@ -45,6 +45,10 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 .wp-block-buttons{box-sizing:border-box}.wp-block-buttons.is-vertical{flex-direction:column}.wp-block-buttons.is-vertical>.wp-block-button:last-child{margin-bottom:0}.wp-block-buttons>.wp-block-button{display:inline-block;margin:0}.wp-block-buttons.is-content-justification-left{justify-content:flex-start}.wp-block-buttons.is-content-justification-left.is-vertical{align-items:flex-start}.wp-block-buttons.is-content-justification-center{justify-content:center}.wp-block-buttons.is-content-justification-center.is-vertical{align-items:center}.wp-block-buttons.is-content-justification-right{justify-content:flex-end}.wp-block-buttons.is-content-justification-right.is-vertical{align-items:flex-end}.wp-block-buttons.is-content-justification-space-between{justify-content:space-between}.wp-block-buttons.aligncenter{text-align:center}.wp-block-buttons:not(.is-content-justification-space-between,.is-content-justification-right,.is-content-justification-left,.is-content-justification-center) .wp-block-button.aligncenter{margin-left:auto;margin-right:auto;width:100%}.wp-block-buttons[style*=text-decoration] .wp-block-button,.wp-block-buttons[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons .wp-block-button__link{width:100%}.wp-block-button.aligncenter{text-align:center}
 /*# sourceURL=https://spreadsheets-are-all-you-need.ai/wp-includes/blocks/buttons/style.min.css */
 </style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:break-spaces}
+/*# sourceURL=https://spreadsheets-are-all-you-need.ai/wp-includes/blocks/code/style.min.css */
+</style>
 <style id="wp-block-embed-inline-css">
 .wp-block-embed.alignleft,.wp-block-embed.alignright,.wp-block[data-align=left]>[data-type="core/embed"],.wp-block[data-align=right]>[data-type="core/embed"]{max-width:360px;width:100%}.wp-block-embed.alignleft .wp-block-embed__wrapper,.wp-block-embed.alignright .wp-block-embed__wrapper,.wp-block[data-align=left]>[data-type="core/embed"] .wp-block-embed__wrapper,.wp-block[data-align=right]>[data-type="core/embed"] .wp-block-embed__wrapper{min-width:280px}.wp-block-cover .wp-block-embed{min-height:240px;min-width:320px}.wp-block-group.is-layout-flex .wp-block-embed{flex:1 1 0%;min-width:0}.wp-block-embed{overflow-wrap:break-word}.wp-block-embed :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-embed iframe{max-width:100%}.wp-block-embed__wrapper{position:relative}.wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper:before{content:"";display:block;padding-top:50%}.wp-embed-responsive .wp-has-aspect-ratio iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.wp-embed-responsive .wp-embed-aspect-21-9 .wp-block-embed__wrapper:before{padding-top:42.85%}.wp-embed-responsive .wp-embed-aspect-18-9 .wp-block-embed__wrapper:before{padding-top:50%}.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before{padding-top:56.25%}.wp-embed-responsive .wp-embed-aspect-4-3 .wp-block-embed__wrapper:before{padding-top:75%}.wp-embed-responsive .wp-embed-aspect-1-1 .wp-block-embed__wrapper:before{padding-top:100%}.wp-embed-responsive .wp-embed-aspect-9-16 .wp-block-embed__wrapper:before{padding-top:177.77%}.wp-embed-responsive .wp-embed-aspect-1-2 .wp-block-embed__wrapper:before{padding-top:200%}
 /*# sourceURL=https://spreadsheets-are-all-you-need.ai/wp-includes/blocks/embed/style.min.css */
@@ -90,6 +94,97 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
         font-size: 14px !important;
     }
 }
+
+/* Paste after existing rules in WordPress > Customize > Additional CSS. */
+/* These selectors apply only to individual blog posts. */
+.single-post .no-sidebar .site-main {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.single-post .entry-content {
+  font-size: 19px;
+  line-height: 1.75;
+  color: #292d32;
+  overflow-wrap: break-word;
+}
+
+.single-post .entry-header .entry-title {
+  font-size: clamp(30px, 3.2vw, 40px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  color: #171b20;
+}
+
+.single-post .entry-content p {
+  margin-bottom: 1.25em;
+}
+
+.single-post .entry-content h2,
+.single-post .entry-content h3 {
+  font-family: inherit;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 1.8em;
+  margin-bottom: 0.65em;
+  color: #171b20;
+}
+.single-post .entry-content h2 { font-size: 28px; }
+.single-post .entry-content h3 { font-size: 23px; }
+
+.single-post .entry-content a:not(.wp-element-button) {
+  color: #185f96;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.single-post .entry-content a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.single-post .entry-content .wp-block-embed {
+  margin-block: 28px;
+}
+.single-post .wp-block-embed-youtube .wp-block-embed__wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+.single-post .wp-block-embed-youtube .wp-block-embed__wrapper::before {
+  display: none;
+}
+.single-post .wp-block-embed-youtube iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .single-post #content-inside {
+    padding-inline: 20px;
+  }
+  .single-post .entry-content {
+    font-size: 18px;
+  }
+}
+
+/* Homepage: space and vertically center press logos */
+.home #about .logo-wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 32px;
+}
+
+.home #about .logo-wall figure {
+  margin: 0;
+  line-height: 0;
+}
+
 </style>
 </link></meta></head>
 <body class="home wp-singular page-template page-template-template-frontpage page-template-template-frontpage-php page page-id-1415 wp-theme-onepress">
@@ -271,6 +366,19 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <div class="row">
 <div class="col-sm-12">
 <div class="blog-entry wow slideInUp">
+<article class="list-article clearfix post-1789 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized" id="post-1789">
+<div class="list-article-thumb">
+<a href="https://spreadsheets-are-all-you-need.ai/im-not-going-to-write-you-a-blog-post/">
+<img alt="" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" decoding="async" height="150" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2026/10/Thumbnail-1200×630@2x-300x150.png" width="300"> </img></a>
+</div>
+<div class="list-article-content">
+<header class="entry-header">
+<h2 class="entry-title"><a href="https://spreadsheets-are-all-you-need.ai/im-not-going-to-write-you-a-blog-post/" rel="bookmark">I’m Not Going to Write You a Blog Post</a></h2> </header>
+<div class="entry-excerpt">
+<p>I was going to write a blog post about AI and Jevons Paradox. These days everyone talks about Jevons Paradox but few point out that it’s temporary. It always ends, …</p>
+</div>
+</div>
+</article>
 <article class="list-article clearfix post-1785 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized" id="post-1785">
 <div class="list-article-thumb">
 <a href="https://spreadsheets-are-all-you-need.ai/rallycompute-distributed-llm-inference-and-coding-directly-in-the-browser/">
@@ -391,7 +499,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <article class="list-article clearfix post-1562 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized" id="post-1562">
 <div class="list-article-thumb">
 <a href="https://spreadsheets-are-all-you-need.ai/if-youre-not-using-ai-20-times-a-day-you-might-be-doing-your-job-wrong/">
-<img alt="" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" decoding="async" height="150" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/05/Untitled-2-300x150.jpg" width="300"> </img></a>
+<img alt="" class="attachment-onepress-blog-small size-onepress-blog-small wp-post-image" decoding="async" height="150" src="https://spreadsheets-are-all-you-need.ai/wp-content/uploads/2025/05/Untitled-2-300x150.jpg" width="300"/> </a>
 </div>
 <div class="list-article-content">
 <header class="entry-header">

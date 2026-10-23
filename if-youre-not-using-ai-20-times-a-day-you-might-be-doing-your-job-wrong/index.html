@@ -66,6 +66,97 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
         font-size: 14px !important;
     }
 }
+
+/* Paste after existing rules in WordPress > Customize > Additional CSS. */
+/* These selectors apply only to individual blog posts. */
+.single-post .no-sidebar .site-main {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.single-post .entry-content {
+  font-size: 19px;
+  line-height: 1.75;
+  color: #292d32;
+  overflow-wrap: break-word;
+}
+
+.single-post .entry-header .entry-title {
+  font-size: clamp(30px, 3.2vw, 40px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  color: #171b20;
+}
+
+.single-post .entry-content p {
+  margin-bottom: 1.25em;
+}
+
+.single-post .entry-content h2,
+.single-post .entry-content h3 {
+  font-family: inherit;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 1.8em;
+  margin-bottom: 0.65em;
+  color: #171b20;
+}
+.single-post .entry-content h2 { font-size: 28px; }
+.single-post .entry-content h3 { font-size: 23px; }
+
+.single-post .entry-content a:not(.wp-element-button) {
+  color: #185f96;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.single-post .entry-content a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.single-post .entry-content .wp-block-embed {
+  margin-block: 28px;
+}
+.single-post .wp-block-embed-youtube .wp-block-embed__wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+.single-post .wp-block-embed-youtube .wp-block-embed__wrapper::before {
+  display: none;
+}
+.single-post .wp-block-embed-youtube iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .single-post #content-inside {
+    padding-inline: 20px;
+  }
+  .single-post .entry-content {
+    font-size: 18px;
+  }
+}
+
+/* Homepage: space and vertically center press logos */
+.home #about .logo-wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 32px;
+}
+
+.home #about .logo-wall figure {
+  margin: 0;
+  line-height: 0;
+}
+
 </style>
 </link></meta></head>
 <body class="wp-singular post-template-default single single-post postid-1562 single-format-standard wp-theme-onepress">
